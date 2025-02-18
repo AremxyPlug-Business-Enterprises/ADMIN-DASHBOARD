@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.Feature{
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+  }
+  .Feature::-webkit-scrollbar{
+    width : 0px;
+  }
+  .Feature::-webkit-scrollbar-thumb{
+    background-color: transparent;
+  }
