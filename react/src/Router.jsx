@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 import {Routes, Route} from "react-router-dom";
 import { Example } from './Components/Example';
-import { Login } from './Components/Login';
+import { Login } from './Components/Auth/Login';
 import { Dashboard } from './Components/Dashboard';
 import { ProductMgt }from './Components/ProductMgt';
 import { StaffMgt } from './Components/StaffMgt';
@@ -11,13 +11,23 @@ import { Notification } from './Components/Notification';
 import { UserTransaction } from './Components/UserTransaction';
 import { WebConfig } from './Components/WebConfig';
 import { ProfileSettings } from './Components/ProfileSettings';
+import { ForgotPasswordEmail } from './Components/Auth/ForgotPasswordEmail';
+import { CreateNewPassword } from "./Components/Auth/CreateNewPassword";
+import { ForgotPasswordOtp } from "./Components/Auth/ForgotPasswordOtp";
+import { CreatePasswordConfirmation,  } from "./Components/Auth/Confirmation";
 export const Router = () => {
   return (
    
   <Routes>
     {/* An example on how to create routes for your pages */}
-     <Route path ="/example" element={<Example/>}/> 
-     <Route path="/" element={<Login/>}/>
+     <Route path ="/example" element={ < Example />}/> 
+     <Route path="/" element={< Login />}/>
+     <Route path="/dashboard/forgot-password" element={ <ForgotPasswordEmail/> } />
+     <Route path="/dashboard/forgot-otp" element={ <ForgotPasswordOtp /> } />
+     <Route path="/dashboard/create-password" element={<CreateNewPassword/>}/>
+     <Route path="/dashboard/create-password-confirmation" element={< CreatePasswordConfirmation />}/>
+
+
      <Route path ="/dashboard" element={<Dashboard/>}/>
      <Route path ="/UserTransaction" element={<UserTransaction/>}/>
      <Route path ="/UserProfile" element={<UserProfile/>}/>
