@@ -1,9 +1,14 @@
-import React from 'react'
-import { DashboardLayout } from './DashboardLayout'
+import TransactionAnalysis from "./UserTransactionAnalysis";
+import { DashboardLayout } from "./DashboardLayout";
+import TransactionHistory from "./UserTransactionHistory";
+
 export const UserTransaction = () => {
   return (
     <DashboardLayout>
-    <div>UserTransaction</div>
+        <div className=" ">
+          <TransactionAnalysis />
+          <TransactionHistory />
+        </div>
     </DashboardLayout>
-  )
-}
+  );
+};
