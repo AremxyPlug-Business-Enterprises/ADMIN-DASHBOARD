@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { Button } from "./UserTransactionButtons";
+
 const CircularProgressDiv = ({ value, color, rotateValue }) => {
   const radius = 30; // Circle radius
   const strokeWidth = 6; // Thickness of progress stroke
@@ -38,6 +41,8 @@ const CircularProgressDiv = ({ value, color, rotateValue }) => {
 };
 
 export default function TransactionStats() {
+  const [showAll, setShowAll] = useState(false);
+
   const data = [
     {
       label: "All Transactions",
@@ -54,22 +59,66 @@ export default function TransactionStats() {
 
   return (
     <div className="poppins">
-      {/* Transaction Circles */}
-      <div className="lg:mb-8 md:mb-6 flex justify-between items-center ">
+      <div className="hidden md:flex lg:mb-8 md:mb-6 justify-between items-center ">
         {data.map((item, index) => (
-            <div key={index} className="flex flex-col lg:gap-[0.5rem] md:gap-[0.29rem] ">
-                {/* gap-[0.99rem] md:gap-[0.5788rem] gap-[0.29rem] */}
+          <div
+            key={index}
+            className="flex flex-col lg:gap-[0.5rem] md:gap-[0.29rem] "
+          >
+            {/* gap-[0.99rem] md:gap-[0.5788rem] gap-[0.29rem] */}
             <CircularProgressDiv
               value={item.value}
               color={item.color}
               rotateValue={item.rotateValue}
             />
-            <p className="text-[#7E7E7E] lg:text-base md:text-[0.7718rem] font-semibold  ">{item.label}</p>
+            <p className="text-[#7E7E7E] lg:text-base md:text-[0.7718rem] font-semibold  ">
+              {item.label}
+            </p>
             {/* text-[1.33rem] */}
-            <p className="lg:text-[0.875rem] md:text-[0.675rem] font-semibold ">Volume: 10,000</p>
-            <p className="lg:text-[0.875rem] md:text-[0.675rem] font-semibold ">Value: ₦10,000</p>
+            <p className="lg:text-[0.875rem] md:text-[0.675rem] font-semibold ">
+              Volume: 10,000
+            </p>
+            <p className="lg:text-[0.875rem] md:text-[0.675rem] font-semibold ">
+              Value: ₦10,000
+            </p>
           </div>
         ))}
+      </div>
+
+      <div className="md:hidden ">
+        <div className="grid grid-cols-2 gap-[0.875rem] ">
+          {data.slice(0, showAll ? data.length : 2).map((item, index) => (
+            <div key={index} className="flex flex-col items-center">
+              <CircularProgressDiv
+                value={item.value}
+                color={item.color}
+                rotateValue={item.rotateValue}
+              />
+              <p className="text-[#7E7E7E] font-medium mb-1">
+                {item.label}
+              </p>
+              <p className="text-sm mb-1">Volume: 10,000</p>
+              <p className="text-sm mb-1 ">Value: ₦10,000</p>
+            </div>
+          ))}
+        </div>
+
+        
+        <div className="flex justify-center my-4">
+        {!showAll ?
+          <Button
+            onClick={() => setShowAll((show) => !show)}
+          >
+            View All Transactions Analysis
+          </Button>
+          : 
+          <Button
+            onClick={() => setShowAll(false)}
+          >
+            View Less Transactions Analysis
+          </Button>
+        }
+        </div>
       </div>
     </div>
   );

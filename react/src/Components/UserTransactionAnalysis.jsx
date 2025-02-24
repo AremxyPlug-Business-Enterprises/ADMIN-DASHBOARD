@@ -1,47 +1,41 @@
+import { useState } from "react";
+
 import ArrowRight from "../assets/arrow-right.png";
 import ArrowDown from "../assets/arrow-down.svg";
-import SelectDateIcon from "../assets/SelectDateIcon.png";
 
 import { Button } from "./UserTransactionButtons";
 import TransactionStats from "./UserTransactionStats";
-import { useState } from "react";
+import DateFilter from "./DateFilter";
+
+
 
 export default function TransactionAnalysis() {
-  const [selectFilter, setSelectFilter] = useState(false);
-  const [selectedOption, setSelectedOption] = useState("TODAY");
   const [productTab, setProductTab] = useState("All Products");
-
-  const options = [
-    "TODAY",
-    "LAST 7 DAYS",
-    "LAST 30 DAYS",
-    "ALL TIME",
-    "CUSTOM",
-  ];
+  
   const selectProducts = ["All Products", "Customize Products"];
   
   return (
-    <section className="poppins ">
+    <section className="poppins md:w-auto max-md:max-w-[48rem] ">
       <Transactions />
-      <div className="hidden lg:block md:block">
-        <p className="flex items-center lg:gap-[0.83rem] md:gap-[0.4825rem] lg:mt-8 md:mt-6  ">
-          <span className="text-[#7C7C7C] font-medium lg:text-[1.66rem] md:text-[0.9644rem] lg:leading-[2.49rem] md:leading-[1.4468rem] ">
+      <div className="">
+        <p className="flex items-center gap-[0.375rem] lg:gap-[0.83rem] md:gap-[0.4825rem] my-6 lg:mt-8 md:mt-6  ">
+          <span className="text-[#7C7C7C] font-normal md:font-medium text-base leading-[1.3rem] lg:text-[1.66rem] md:text-[0.9644rem] lg:leading-[2.49rem] md:leading-[1.4468rem] ">
             Transactions Analysis
           </span>
           <img
             src={ArrowRight}
             alt="Arrow Right"
-            className=" lg:w-[1.99rem] lg:h-[1.99rem] md:w-[1.1575rem] md:h-[1.1575rem]"
+            className="w-6 h-6 lg:w-[1.99rem] lg:h-[1.99rem] md:w-[1.1575rem] md:h-[1.1575rem]"
           />
         </p>
 
-        <div className="flex items-center lg:border-b-[1.33px] md:border-b-[0.77px] border-b-[#0000004D] font-medium lg:gap-[8.33rem] md:gap-[4.8225rem] lg:mt-6 md:mt-4 ">
+        <div className="flex items-center border-b lg:border-b-[1.33px] md:border-b-[0.77px] border-b-[#0000004D] md:font-medium gap-9 lg:gap-[8.33rem] md:gap-[4.8225rem] lg:mt-6 md:mt-4 ">
           {selectProducts.map((product, index) => (
             <p
               key={index}
-              className={`lg:py-[0.83rem] lg:px-[2.49rem] md:py-[0.4825rem] md:px-[1.4468rem] lg:leading-[2.49rem] md:leading-[1.4468rem] cursor-pointer lg:text-[1.67rem] md:text-[0.9643rem] ${
+              className={`py-[0.8325rem] lg:py-[0.83rem] md:py-[0.4825rem] px-[2.4968rem] lg:px-[2.49rem] md:px-[1.4468rem] leading-[1.3125rem] lg:leading-[2.49rem] md:leading-[1.4468rem] cursor-pointer text-[0.875rem] lg:text-[1.67rem] md:text-[0.9643rem] ${
                 productTab === product
-                  ? "bg-[#E2F3FF] lg:border-b-[5.33px] md:border-b-[3.09px] border-b-[#04177F] lg:rounded-[7.99px] md:rounded-[7.99px]"
+                  ? "bg-[#E2F3FF] border-b-[5.33px] lg:border-b-[5.33px] md:border-b-[3.09px] border-b-[#04177F] rounded-[7.99px]"
                   : ""
               } `}
               onClick={() => setProductTab(product)}
@@ -51,48 +45,20 @@ export default function TransactionAnalysis() {
           ))}
         </div>
 
-        <div className="lg:shadow-[0px_0px_9.19px_0px_rgba(0,0,0,0.25)] mt-6 p-4 lg:rounded-[1.33rem] md:rounded-[0.7718rem] lg:py-[3.33rem] md:py-[1.92875rem] px-[1.499rem] flex flex-col lg:gap-[1.66rem] md:gap-[0.9643rem] md:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)]">
-          <span className=" lg:px-6 md:px-4 flex items-center justify-between cursor-pointer">
-            <span className="lg:rounded-[19.59px] md:rounded-[11.34px] bg-[#92ABFE2E] flex items-center lg:gap-[0.941875rem] md:gap-[0.5456rem] lg:py-[0.47rem] lg:px-[0.83rem] md:py-[0.2725rem] md:px-[0.4825rem] ">
-              <span className="text-[0.83rem] font-semibold">NGN</span>
+        <div className=" lg:shadow-[0px_0px_9.19px_0px_rgba(0,0,0,0.25)] mt-8 md:mt-6 p-[1.25rem] md:p-4 rounded-2xl lg:rounded-[1.33rem] md:rounded-[0.7718rem] lg:py-[3.33rem] md:py-[1.92875rem] md:px-[1.499rem] flex flex-col gap-[2.5rem] border border-[#77777733] lg:gap-[1.66rem] md:gap-[0.9643rem] md:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)]">
+          <span className="px-3 lg:px-6 md:px-4 flex items-center justify-between cursor-pointer">
+            <span className="rounded-[4px] lg:rounded-[19.59px] md:rounded-[11.34px] bg-[#92ABFE2E] flex items-center gap-[0.941875rem] lg:gap-[0.941875rem] md:gap-[0.5456rem] py-[0.470625rem] lg:py-[0.47rem] md:py-[0.2725rem] px-[0.8325rem] lg:px-[0.83rem] md:px-[0.4825rem] ">
+              <span className="text-[0.83rem] md:font-semibold">NGN</span>
               <img
                 src={ArrowDown}
                 alt=""
-                className="inline-block w-[1.31rem] h-[1.31rem] "
+                className="inline-block w-[1.318125rem] h-[1.318125rem] lg:w-[1.31rem] lg:h-[1.31rem] md:w-[0.76375rem] md:h-[0.76375rem] "
               />
             </span>
 
             {/* <input type="date" name="" id="" /> */}
-            <span
-              className="flex items-center justify-between gap-[0.66rem] md:gap-[0.3856rem] lg:rounded-[6.66px] md:rounded-[3.86px] lg:py-[0.33rem] md:py-[0.1931rem] lg:px-[0.66rem] md:px-[0.3856rem] lg:shadow-[0px_0px_5.33px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.09px_0px_rgba(0,0,0,0.25)] lg:w-[12.16rem] md:w-[7.040625rem] cursor-pointer relative"
-              onClick={() => setSelectFilter(!selectFilter)}
-            >
-              <span className="uppercase text-[#04177F] lg:text-[1.33rem] md:text-[.77187rem] font-semibold lg:leading-[1.998rem] md:leading-[1.1575rem] ">
-                {selectedOption}
-              </span>
-              <img
-                src={SelectDateIcon}
-                alt=""
-                className="lg:w-[1.24625rem] lg:h-[1.24625rem] md:w-[0.721875rem] md:h-[0.721875rem]"
-              />
-              {selectFilter && (
-                <ul className="poppins text-[0.75rem] text-[#494A53] w-[9.125rem]  shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute lg:top-[3.5rem] md:top-[2rem] lg:right-[0.5rem] md:right-0 p-2 bg-white z-10">
-                  {/* h-[2.75rem] */}
-                  {options.map((option, index) => (
-                    <li
-                      key={index}
-                      className="py-2 px-1 border-b-[0.4px] border-b-[#9C9C9C] cursor-pointer hover:bg-gray-100"
-                      onClick={() => {
-                        setSelectedOption(option); // Update selected option
-                        setSelectFilter(false); // Close dropdown
-                      }}
-                    >
-                      {option}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </span>
+            <DateFilter />
+            
           </span>
 
           <div className="">
