@@ -64,11 +64,11 @@ export const DashboardLayout = ({children}) => {
     </div>
 {/* SIDE BAR */}
 {dashboardOpen ?  (
-    <div className='fixed h-screen z-2 lg:w-[23%] md:w-[30%]  w-[70%]
-     bg-[#04177F] border-1 rounded-r-[25px] p-[15px]'>
-     <div className=" flex flex-col h-[45%] justify-between w-full md:w-full
+    <div className='fixed h-screen z-2 lg:w-[23%] md:w-[40%]  w-[70%] justify-between
+     bg-[#04177F] flex flex-col border-1 rounded-r-[25px] p-[15px] gap-[10px] lg:gap-[20px] '>
+     <div className=" flex flex-col lg:h-[45%] md:h-[40%]  h-[45%] w-full md:w-full
       ">
-    <div className="flex h-[30%]  items-center justify-between">
+    <div className="flex md:h-[30%] h-[23%] items-center justify-between">
       
     <img src={Logo} className="w-[118px] h-[17px]" alt="" />
     
@@ -76,18 +76,20 @@ export const DashboardLayout = ({children}) => {
     setDashboardOpen(false)
    }} src={Menu} className="w-[30px] h-[30px]" alt="" />
     </div>
-    <div className='flex flex-col border-t-1   h-[70%]  gap-[10px] md:gap-[25px] 
-     justify-between border-white py-[20px] lg:py-[35px]'>
-    <div className="flex gap-[10px] h-[50%] w-[100%] justify-center">
+    <div className=' flex flex-col border-y-1 md:border-t-1 
+    md:border-b-0 border-white  md:h-[70%] h-[77%]
+     gap-[10px] lg:gap-[35px] md:gap-[5px] 
+       py-[20px] lg:py-[20px]'>
+    <div className="flex gap-[10px] lg:h-[50%] md:h-[40%] h-[70%] w-[100%] justify-center">
 <img src={ProfileLogo} className='self-start w-[60px] h-[60px]' alt="" />
 <div className="flex flex-col gap-[5px] lg:gap-[7px] w-full">
-    <div className="flex flex-col justify-between gap-[3px] md:gap-[7px] ">
+    <div className="flex flex-col justify-between gap-[5px]  ">
     <p className="text-white text-[14px] leading-[21px] lg:text-[16px]
      lg:leading-[23px] font-[500]">AremxyPlug Business Ent, LTD</p>
-    <p className="text-white text-[12px] leading-[18px] font-[600]">admin@aremxyPlug.com</p>
-    <p className="text-white text-[12px] leading-[18px] font-[600]">ID:AP/ADM/001</p>
+    <p className="text-white text-[12px] leading-[18px] font-[500]">admin@aremxyPlug.com</p>
+    <p className="text-white text-[12px] leading-[18px] font-[500]">ID:AP/ADM/001</p>
    </div>
-    <div className="flex gap-[5px]">
+    <div className="flex gap-[5px] ">
         <p className="text-white text-[12px] leading-[18px] font-[600]">Admin</p>
         <p className="text-white text-[12px] leading-[18px] font-[600]">Verified</p>
     </div>
@@ -95,9 +97,9 @@ export const DashboardLayout = ({children}) => {
     </div>
    
 </div>
-<Link to ="/dashboard" className='flex gap-[15px] h-[50%] w-full justify-left mt-[20px]  lg:mt-[10px] bg-[#F2FAFF1A] 
-     rounded-[10px] md:py-[20px] md:px-[15px] py-[16px] px-[14px] items-center '>
-        <img className="md:h-[40px] md:w-[40px] h-[24px] w-[24px]" src={DashboardIcon} alt="" />
+<Link to ="/dashboard" className='flex gap-[15px]   w-full justify-left   lg:mt-[10px] bg-[#F2FAFF1A] 
+     rounded-[10px] md:py-[16px] md:px-[15px] py-[16px] px-[14px] items-center '>
+        <img className="md:h-[30px] md:w-[30px] h-[24px] w-[24px]" src={DashboardIcon} alt="" />
     <p className='text-white font-[600] text-[16px] leading-[23px]'>
         Dashboard
         </p>
@@ -106,7 +108,7 @@ export const DashboardLayout = ({children}) => {
     </div>
     {/* Dashboard components are listed where you are to
      link all your webpages to relating to the dashboard */}
-    <div className='flex flex-col mt-[10px]  Feature h-[55%] border-t-1 border-white   gap-[20px]'>
+    <div className='flex flex-col Feature h-[55%] gap-[20px]'>
 <p className="lg:text-[16px] font-[500] mt-4 text-[14px] leading-[24px] lg:leading-[24px] lg:font-[600]
  text-white">
     FEATURES
@@ -116,12 +118,12 @@ export const DashboardLayout = ({children}) => {
 <Link to="/UserTransaction" className="flex gap-[12px] w-full items-center">
 <img className="w-[24px] h-[24px]" src={UserTransaction} alt="" />
 <p className="lg:text-[14px] text-[16px] leading-[24px] lg:leading-[21px] font-[400]
- lg:font-[600] text-white">User Transaction</p>
+ lg:font-[500] text-white">User Transaction</p>
 </Link>
 {/* User Profile */}
 <Link to="/UserProfile" className="flex gap-[12px] w-full items-center">
 <img className="w-[24px] h-[24px]" src={UserProfile} alt="" />
-    <p className="lg:text-[14px] text-[16px] leading-[24px] lg:leading-[21px] lg:font-[600] font-[500] text-white">
+    <p className="lg:text-[14px] text-[16px] leading-[24px] lg:leading-[21px] lg:font-[500] font-[500] text-white">
         User Profile
     </p>
    
@@ -130,14 +132,14 @@ export const DashboardLayout = ({children}) => {
 <Link className="flex gap-[12px] w-full items-center" to="/FinanceManagement">
 <img className="w-[24px] h-[24px]" src={FinanceManagement} alt="" />
     
-    <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px] lg:font-[600] font-[500] text-white">
+    <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px]  font-[500] text-white">
         Finance management
         </p>
 </Link>
 {/* Product Management */}
 <Link className="flex gap-[15px] w-full items-center">
 <img className="w-[24px] h-[24px]" src={ProductManagement} alt="" />
-    <p className='lg:text-[14px] lg:leading-[21px] lg:font-[600] text-[16px] font-[500] leading-[24px] text-white'>
+    <p className='lg:text-[14px] lg:leading-[21px]  text-[16px] font-[500] leading-[24px] text-white'>
         Product Maangement
     </p>
   
@@ -145,7 +147,7 @@ export const DashboardLayout = ({children}) => {
 {/* Staff Management  */}
 <Link to="/StaffManagement" className="flex gap-[15px] w-full items-center">
 <img className="w-[24px] h-[24px]" src={StaffMgt} alt="" />
-    <p className="lg:text-[14px] lg:leading-[21px] lg:font-[600] font-[500]
+    <p className="lg:text-[14px] lg:leading-[21px]  font-[500]
      text-[16px] leading-[24px] text-white">
         Staff Management
     </p>
@@ -155,14 +157,14 @@ export const DashboardLayout = ({children}) => {
 <Link to="/WebConfig" className="flex gap-[15px]  w-full items-center">
 <img src={WebConfig} className='w-[24px] h-[24px]' alt="" />
     <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px]
-     lg:font-[600] font-[500] text-white">
+      font-[500] text-white">
         Web Configuration
     </p>
   </Link>
   {/* Notfication */}
 <Link to ="/Notification" className='flex w-full gap-[15px] items-center '>
 <img src={Notification} className="w-[24px] h-[24px]" alt="" />
-    <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px] lg:font-[600] font-[500] text-white">
+    <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px]  font-[500] text-white">
         Notification
     </p>
   
@@ -171,12 +173,12 @@ export const DashboardLayout = ({children}) => {
 <Link to="/ProfileSettings" className='flex w-full  items-center gap-[15px]'>
 <img src={ProfileSettings} className="w-[24px] h-[24px]" alt="" />
     <p className="lg:text-[14px] lg:leading-[21px] text-[16px] 
-    leading-[24px] lg:font-[600] font-[500] text-white">
+    leading-[24px]  font-[500] text-white">
         Profile settings</p>
 
 </Link>
 </div>
-<Link to="/" className="flex gap-[15px] h-[6%] mb-[20px]  justify-start items-center w-full">
+<Link to="/" className="flex gap-[15px] h-[5%] mb-[10px]  justify-start items-center w-full">
 <img src={logOutIcon} className="w-[24px] h-[24px]" alt="" />
     <p className="lg:text-[14px] lg:leading-[21px] text-[16px] leading-[24px]
      font-[500] lg:font-[600] text-white">
