@@ -11,10 +11,9 @@ import { Notification } from './Components/Notification';
 import { UserTransaction } from './Components/UserTransaction';
 import { WebConfig } from './Components/WebConfig';
 import { ProfileSettings } from './Components/ProfileSettings';
-import { ForgotPasswordEmail } from './Components/Auth/ForgotPasswordEmail';
 import { CreateNewPassword } from "./Components/Auth/CreateNewPassword";
-import { ForgotPasswordOtp } from "./Components/Auth/ForgotPasswordOtp";
-import { CreatePasswordConfirmation,  } from "./Components/Auth/Confirmation";
+
+// import { CreatePasswordConfirmation,  } from "./Components/Auth/Confirmation";
 export const Router = () => {
   return (
    
@@ -22,10 +21,8 @@ export const Router = () => {
     {/* An example on how to create routes for your pages */}
      <Route path ="/example" element={ < Example />}/> 
      <Route path="/" element={< Login />}/>
-     <Route path="/dashboard/forgot-password" element={ <ForgotPasswordEmail/> } />
-     <Route path="/dashboard/forgot-otp" element={ <ForgotPasswordOtp /> } />
      <Route path="/dashboard/create-password" element={<CreateNewPassword/>}/>
-     <Route path="/dashboard/create-password-confirmation" element={< CreatePasswordConfirmation />}/>
+
 
 
      <Route path ="/dashboard" element={<Dashboard/>}/>

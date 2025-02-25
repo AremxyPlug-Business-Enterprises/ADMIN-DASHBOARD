@@ -7,11 +7,13 @@ import eyes from "../../assets/eye.svg"
 import hideEyes from "../../assets/eye-slash.svg"
 
 import axios from  'axios'
+import ConfirmCreate from './ConfirmCreate'
 
 
 export const CreateNewPassword = () => {
     // const {example} = UseGlobalContext()
 const [showPassword, setShowPassword] = useState(false)
+const [ showConfirm, setShowConfirm] = useState(false)
 const [error, setError] = useState(false)
 const [formData, setFormdata] = useState({
  password: "",
@@ -44,7 +46,11 @@ const handleSubmit = async (e) => {
 
 
 
-<div className='flex flex-col md:flex-row  min-h-screen  items-center justify-center lg:items-start lg:justiy-center  relative bg-[#04177F] md:bg-white overflow-x-hidden py-7 md:py-0 w-full  max-w-[1440px]'>
+<div className={`flex flex-col md:flex-row  min-h-screen  items-center justify-center 
+lg:items-start lg:justiy-center  relative overflow-x-hidden py-7 
+md:py-0 w-full  max-w-[1440px] 
+${showConfirm? "bg-[#04177F] md:bg-[#e3e3e3]" : "bg-[#04177F] md:bg-white "}
+`}>
 
   <div className='max-w-[667px] md:h-[1024px] w-full md:min-h-screen flex items-center justify-center
    bg-[#04177F] h-[353px]'>
@@ -59,7 +65,10 @@ const handleSubmit = async (e) => {
   </div>
 
 
-  <div className='w-full h-[536px] md:h-full relative flex flex-col gap-15 items-center justify-center bg-white ml-4 mt-2 rounded-l-[29px] md:rounded-none'>
+  <div className={` w-full h-[536px] md:h-full relative flex flex-col gap-15 items-center 
+  justify-center ml-4 mt-2 rounded-l-[29px] md:rounded-none
+     ${showConfirm ? "bg-[#e3e3e3]" : "bg-white "}
+  `}>
 
 
     <div className='absolute top-[20px] left-[13px]'>
@@ -76,8 +85,15 @@ const handleSubmit = async (e) => {
   <p className='text-[#000000] font-bold text-base' >The Official Admin Account.</p>
 </div> */}
 
+{ showConfirm && 
+<div className='absolute z-[1000] lg:h-[590px] lg:w-[606px] w-[95%] h-[363px]  top-[70px] md:top-[50px] 
+lg:top-[160px]  '>
+  <ConfirmCreate  setShowConfirm={setShowConfirm} />
+  </div>}
+
+
 {/* Form */}
-<div className='w-full flex flex-col items-center justify-center mt-0 gap-[14px] lg:mt-[200px]'>
+<div className='w-full flex flex-col items-center justify-center mt-0 gap-[14px] md:mt-[120px] lg:mt-[200px]'>
     
 
     <h1 className='lg:text-[18px] text-base text-[#000000] font-medium lg:leading-[27px]'>Create New Password</h1>
@@ -142,7 +158,10 @@ const handleSubmit = async (e) => {
     </div> */}
 
     <div className='flex items-center justify-center w-full'>
-      <button type='submit'  className='bg-[#04177F] py-[1px] px-[35px] ms:rounded-[8px] rounded-[5px] text-white text-center md:h-[38px] lg:w-[123px] w-full h-[44px] cursor-pointer'>
+      <button type='submit' 
+      onClick={() => setShowConfirm(!showConfirm)} 
+       className='bg-[#04177F] py-[1px] px-[35px] ms:rounded-[8px] rounded-[5px] text-white 
+       text-center md:h-[38px] lg:w-[123px] w-full h-[44px] cursor-pointer flex items-center justify-center'>
 Continue
       </button>
     </div>

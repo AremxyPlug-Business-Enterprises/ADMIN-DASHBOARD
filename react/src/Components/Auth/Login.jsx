@@ -7,10 +7,18 @@ import eyes from "../../assets/eye.svg"
 import hideEyes from "../../assets/eye-slash.svg"
 import sms from '../../assets/sms.svg'
 import axios from  'axios'
+import { ForgotPasswordEmail } from './ForgotPasswordEmail';
+import { ForgotPasswordOtp } from './ForgotPasswordOtp';
+import ConfirmForgot from './ConfirmForgot';
 
 
 export const Login = () => {
     // const {example} = UseGlobalContext()
+
+const [ showForgot, setShowForgot] = useState(false)
+const [ showForgotOtp, setShowForgotOtp] = useState(false)
+const [ showConfirm, setShowConfirm] = useState(false)
+
 const [showPassword, setShowPassword] = useState(false)
 const [error, setError] = useState(false)
 const [formData, setFormdata] = useState({
@@ -20,6 +28,10 @@ const [formData, setFormdata] = useState({
 
 const handleShowPassword = () => {
   setShowPassword((prev) =>!prev)
+}
+
+const handleShowForgot =() => {
+ setShowForgot(!showForgot)
 }
 
 
@@ -38,13 +50,23 @@ const handleSubmit = async (e) => {
 };
 
 
+// const handleToggle = () => {
+//   setShowForgot(false);
+//   setShowForgotOtp(false)
+// }
+
   return (
 
 <section className='w-full flex items-center  justify-center'>
+{/* { showForgot && showForgotOtp && showConfirm && <div onClick={handleToggle} className='bg-[#e3e3e3] z-[100] '></div> } */}
 
 
 
-<div className='flex flex-col md:flex-row  min-h-screen  items-center justify-center lg:items-start lg:justiy-center  relative bg-[#04177F] md:bg-white overflow-x-hidden py-7 md:py-0 w-full  max-w-[1440px]'>
+<div className={`flex flex-col md:flex-row  min-h-screen  items-center justify-center 
+lg:items-start lg:justiy-center  relative overflow-x-hidden py-7 md:py-0 w-full  
+max-w-[1440px]
+${showForgot  || showForgotOtp  || showConfirm? "bg-[#04177F] md:bg-[#e3e3e3]" : "bg-[#04177F] md:bg-white "}
+`}>
 
   <div className='max-w-[667px] md:h-[1024px] w-full md:min-h-screen flex items-center justify-center
    bg-[#04177F] h-[353px]'>
@@ -53,13 +75,15 @@ const handleSubmit = async (e) => {
     src={saly}
     alt='' 
     className='max-w-[500px] w-full md:max-h-[500px] h-[353px]'
-
      />
 
   </div>
 
 
-  <div className='w-full h-[536px] md:h-full relative flex flex-col gap-15 items-center justify-center bg-white ml-4 mt-2 rounded-l-[29px] md:rounded-none'>
+  <div className={`w-full h-[536px] md:h-full relative flex flex-col gap-15 items-center justify-center
+    ml-4 mt-2 rounded-l-[29px] md:rounded-none
+   ${showForgot || showForgotOtp || showConfirm ? "bg-[#e3e3e3]" : "bg-white "}
+   `}>
 
 
     <div className='absolute top-[20px] left-[13px]'>
@@ -76,13 +100,43 @@ const handleSubmit = async (e) => {
   <p className='text-[#000000] font-bold text-base' >The Official Admin Account.</p>
 </div>
 
+
+{ showForgot && 
+<div className='absolute z-[1000] lg:h-[590px] lg:w-[606px] w-[95%] h-[363px]  top-[60px] md:top-[150px] 
+lg:top-[200px]  '>
+  <ForgotPasswordEmail  setShowForgotOtp={setShowForgotOtp} setShowForgot={setShowForgot} />
+  </div>}
+
+  { showForgotOtp && 
+<div className='absolute z-[1000] lg:h-[590px] lg:w-[606px] w-[95%] h-[363px]  top-[60px] md:top-[150px] 
+lg:top-[200px]  '>
+  <ForgotPasswordOtp   setShowConfirm={setShowConfirm}  
+  setShowForgot={setShowForgot} 
+  setShowForgotOtp={setShowForgotOtp}  />
+  </div>}
+
+  { showConfirm && 
+<div className='absolute z-[1000] lg:h-[590px] lg:w-[606px] w-[95%] h-[363px]  top-[60px] md:top-[150px] 
+lg:top-[200px]  '>
+  <ConfirmForgot 
+/>
+  </div>}
+
+
+
+
 {/* Form */}
-<div className='w-full flex items-center justify-center lg:mt-[200px]'>
+<div className='w-full flex items-center justify-center lg:mt-[200px] '>
+
+
+ 
+
   <form onSubmit={handleSubmit} className='flex flex-col gap-6 lg:gap-5 max-w-[375px] w-full px-5'>
 
     <div className='flex flex-col gap-[10px]'>
     <label className='text-[#000000] lg:text-base text-sm leading-[11px] font-semibold'> Domain name</label>
-      <div className={` border-[1px] border-[#9C9C9C] h-[51px] w-full flex items-center justify-center p-3 
+      <div className={` border-[1px] border-[#9C9C9C] h-[51px] w-full flex 
+      items-center justify-center p-3 
         
          ${error ? "border-[1px] border-[#F95252]" : ""}`}>
         <input type='email' placeholder='' required className='w-full border-0 outline-none'   />
@@ -120,7 +174,10 @@ const handleSubmit = async (e) => {
 
 
     <div className='flex lg:flex-col flex-row-reverse w-full justify-between items-center md:items-start gap-1'>
-      <Link to='/dashboard/forgot-password' className='text-[#04177F] text-sm font-medium lg:font-semibold'>Forgot Password?</Link>
+      <Link to='#'
+      onClick={handleShowForgot}
+       className='text-[#04177F] text-sm font-medium lg:font-semibold'> Forgot Password?</Link>
+
       <div className='flex items-center gap-1'>
         <input type='checkbox' className='cursor-pointer' />
         <h1 className='lg:text-[#7C7C7C] text-[#344054] text-sm lg:text-[12px] font-medium'>Remember me next time!</h1>
@@ -136,6 +193,7 @@ Sign in
 
 
   </form>
+
 </div>
 
   </div>
