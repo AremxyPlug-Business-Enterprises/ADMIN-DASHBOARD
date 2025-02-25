@@ -9,6 +9,9 @@ import UserTransactionDetails from "./UserTransactionDetails";
 import { Button } from "./UserTransactionButtons";
 
 import { useState } from "react";
+import PropTypes from "prop-types";
+
+
 
 export default function TransactionHistory() {
   const [openFilter, setOpenFilter] = useState(false);
@@ -93,6 +96,9 @@ export function Search({ setOpenFilter }) {
     </div>
   );
 }
+Search.propTypes = {
+  setOpenFilter: PropTypes.func,
+};
 
 function Filters({ setOpenFilter }) {
   const [showStatus, setShowStatus] = useState("");
@@ -350,3 +356,7 @@ function Filters({ setOpenFilter }) {
     </div>
   );
 }
+
+Filters.propTypes = {
+  setOpenFilter: PropTypes.func,
+};

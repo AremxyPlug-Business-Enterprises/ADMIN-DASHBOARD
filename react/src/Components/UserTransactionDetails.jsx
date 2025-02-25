@@ -7,7 +7,9 @@ import PreviousArrow from "../assets/previous-arrow.png";
 import NoTransaction from "../assets/no-transaction.png";
 
 import { StatusButton } from "./UserTransactionButtons";
+
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 function UserDetails() {
   return (
@@ -68,6 +70,12 @@ function MobileUserDetails({ orderId, description, product, bgColor }) {
   );
 }
 // #26D06F
+MobileUserDetails.propTypes = {
+  orderId: PropTypes.number,
+  description: PropTypes.string,
+  product: PropTypes.string,
+  bgColor: PropTypes.string,
+};
 
 export default function UserTransactionDetails() {
   const [showUserDetails, setShowUserDetails] = useState(false);
