@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { DateRange } from "react-date-range";
-import "react-date-range/dist/styles.css"; 
+import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
 import SelectDateIcon from "../assets/SelectDateIcon.png";
@@ -18,25 +18,29 @@ export default function DateFilter() {
     },
   ]);
 
+  function handleSelectFilter() {
+    setSelectFilter((show) => !show);
+  }
+
   function handleSelectOption(rangeLabel) {
     setSelectedOption(rangeLabel);
     setSelectFilter(false);
 
     if (rangeLabel === "CUSTOM") {
-      setShowCustomDatePicker(true);
+      setShowCustomDatePicker((prev) => !prev);
     } else {
       setShowCustomDatePicker(false);
     }
   }
 
-  const handleApplyCustom =(e) => {
+  const handleApplyCustom = (e) => {
     e.stopPropagation();
 
     const start = range[0].startDate.toLocaleDateString();
     const end = range[0].endDate.toLocaleDateString();
     setSelectedOption(`${start} - ${end}`);
-      setShowCustomDatePicker(false);
-      setSelectFilter(false)
+    setShowCustomDatePicker(false);
+    setSelectFilter(false);
   };
 
   const options = [
@@ -48,8 +52,8 @@ export default function DateFilter() {
   ];
   return (
     <div
-      className="flex items-center justify-between gap-[0.666rem] lg:gap-[0.66rem] md:gap-[0.3856rem] rounded-[6.66px] lg:rounded-[6.66px] md:rounded-[3.86px] py-[0.333125rem] lg:py-[0.33rem] md:py-[0.1931rem] px-[0.666rem] lg:px-[0.66rem] md:px-[0.3856rem] shadow-[0px_0px_5.33px_0px_rgba(0,0,0,0.25)] lg:shadow-[0px_0px_5.33px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.09px_0px_rgba(0,0,0,0.25)] w-[7.5rem] lg:w-[12.16rem] md:w-[7.040625rem] cursor-pointer relative"
-      onClick={() => setSelectFilter(!selectFilter)}
+      className="flex items-center justify-between gap-[0.666rem] lg:gap-[0.66rem] md:gap-[0.3856rem] rounded-[6.66px] lg:rounded-[6.66px] md:rounded-[3.86px] py-[0.333125rem] lg:py-[0.33rem] md:py-[0.1931rem] px-[0.666rem] lg:px-[0.66rem] md:px-[0.3856rem] shadow-[0px_0px_5.33px_0px_rgba(0,0,0,0.25)] lg:shadow-[0px_0px_5.33px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.09px_0px_rgba(0,0,0,0.25)] w-[7.5rem] lg:w-[12.16rem] md:w-[8rem] cursor-pointer relative"
+      onClick={handleSelectFilter}
     >
       <span className="uppercase text-[#04177F] text-[0.875rem] lg:text-[1.33rem] md:text-[.77187rem] md:font-semibold leading-[1.3125rem] lg:leading-[1.998rem] md:leading-[1.1575rem] ">
         {selectedOption}
@@ -87,7 +91,10 @@ export default function DateFilter() {
 
       {/* custom date picker */}
       {showCustomDatePicker && (
-        <div className="bg-white rounded p-4 absolute top-[5rem] right-[10rem] z-10 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)]" onClick={(e) => e.stopPropagation()}>
+        <div
+          className="bg-white rounded p-4 absolute top-[14rem] -right-10 lg:top-[5rem] lg:right-[10rem] md:top-[14rem] md:right-0 z-10 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)] "
+          onClick={(e) => e.stopPropagation()}
+        >
           <p className="border border-[#E0E0E0] flex justify-center text-sm gap-[18rem] py-3 rounded-[4px] ">
             <span>Start Date</span>
             <span>End Date</span>
@@ -97,7 +104,7 @@ export default function DateFilter() {
             onChange={(item) => setRange([item.selection])}
             moveRangeOnFirstSelection={false}
             ranges={range}
-            months={2} 
+            months={2}
             direction="horizontal"
             // rangeColors={["#04177F"]}
             showMonthAndYearPickers={true}

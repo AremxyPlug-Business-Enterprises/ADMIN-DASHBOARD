@@ -15,9 +15,9 @@ export default function TransactionAnalysis() {
   const selectProducts = ["All Products", "Customize Products"];
   
   return (
-    <section className="poppins md:w-auto max-md:max-w-[48rem] ">
+    <section className="poppins md:w-full max-md:max-w-[48rem] ">
       <Transactions />
-      <div className="">
+      <div className="w-full">
         <p className="flex items-center gap-[0.375rem] lg:gap-[0.83rem] md:gap-[0.4825rem] my-6 lg:mt-8 md:mt-6  ">
           <span className="text-[#7C7C7C] font-normal md:font-medium text-base leading-[1.3rem] lg:text-[1.66rem] md:text-[0.9644rem] lg:leading-[2.49rem] md:leading-[1.4468rem] ">
             Transactions Analysis
@@ -29,11 +29,11 @@ export default function TransactionAnalysis() {
           />
         </p>
 
-        <div className="flex items-center border-b lg:border-b-[1.33px] md:border-b-[0.77px] border-b-[#0000004D] md:font-medium gap-9 lg:gap-[8.33rem] md:gap-[4.8225rem] lg:mt-6 md:mt-4 ">
+        <div className="w-full flex items-center border-b lg:border-b-[1.33px] md:border-b-[0.77px] border-b-[#0000004D] md:font-medium gap-9 lg:gap-[8.33rem] md:gap-[4.8225rem] lg:mt-6 md:mt-4 ">
           {selectProducts.map((product, index) => (
             <p
               key={index}
-              className={`py-[0.8325rem] lg:py-[0.83rem] md:py-[0.4825rem] px-[2.4968rem] lg:px-[2.49rem] md:px-[1.4468rem] leading-[1.3125rem] lg:leading-[2.49rem] md:leading-[1.4468rem] cursor-pointer text-[0.875rem] lg:text-[1.67rem] md:text-[0.9643rem] ${
+              className={`w-full py-[0.8325rem] lg:py-[0.83rem] md:py-[0.4825rem] px-[2.4968rem] lg:px-[2.49rem] md:px-[1.4468rem] leading-[1.3125rem] lg:leading-[2.49rem] md:leading-[1.4468rem] cursor-pointer text-[0.875rem] lg:text-[1.67rem] md:text-[0.9643rem] ${
                 productTab === product
                   ? "bg-[#E2F3FF] border-b-[5.33px] lg:border-b-[5.33px] md:border-b-[3.09px] border-b-[#04177F] rounded-[7.99px]"
                   : ""
@@ -45,8 +45,8 @@ export default function TransactionAnalysis() {
           ))}
         </div>
 
-        <div className=" lg:shadow-[0px_0px_9.19px_0px_rgba(0,0,0,0.25)] mt-8 md:mt-6 p-[1.25rem] md:p-4 rounded-2xl lg:rounded-[1.33rem] md:rounded-[0.7718rem] lg:py-[3.33rem] md:py-[1.92875rem] md:px-[1.499rem] flex flex-col gap-[2.5rem] border border-[#77777733] lg:gap-[1.66rem] md:gap-[0.9643rem] md:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)]">
-          <span className="px-3 lg:px-6 md:px-4 flex items-center justify-between cursor-pointer">
+        <div className="w-full lg:shadow-[0px_0px_9.19px_0px_rgba(0,0,0,0.25)] mt-8 md:mt-6 p-[1.25rem] rounded-2xl lg:rounded-[1.33rem] md:rounded-[0.7718rem] lg:py-[3.33rem] md:py-[1.92875rem] md:px-[0.8rem] flex flex-col gap-[2.5rem] border border-[#77777733] lg:gap-[1.66rem] md:gap-[0.9643rem] md:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)]">
+          <span className="w-full px-3 lg:px-6 md:px-4 flex items-center justify-between cursor-pointer">
             <span className="rounded-[4px] lg:rounded-[19.59px] md:rounded-[11.34px] bg-[#92ABFE2E] flex items-center gap-[0.941875rem] lg:gap-[0.941875rem] md:gap-[0.5456rem] py-[0.470625rem] lg:py-[0.47rem] md:py-[0.2725rem] px-[0.8325rem] lg:px-[0.83rem] md:px-[0.4825rem] ">
               <span className="text-[0.83rem] md:font-semibold">NGN</span>
               <img
@@ -72,7 +72,7 @@ export default function TransactionAnalysis() {
 
 function Transactions() {
   return (
-    <div className="poppins">
+    <div className="poppins w-full">
       <h1 className="font-semibold text-[1.25rem] leading-[1.875] lg:text-[2.33rem] lg:leading-[3.495rem] text-[#9C9C9C] md:leading-[2.02rem] md:text-[1.35rem]">
         User Transactions
       </h1>

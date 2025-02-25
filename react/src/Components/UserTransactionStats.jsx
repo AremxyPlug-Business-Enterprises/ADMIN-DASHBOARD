@@ -8,8 +8,9 @@ const CircularProgressDiv = ({ value, color, rotateValue }) => {
   const progress = (value / 100) * circumference; // Progress based on value
   return (
     <svg
-      width="110"
-      height="110"
+      // width="110"
+      // height="110"
+      className="w-28 h-28 md:w-[4.8225rem] md:h-[4.8225rem] lg:w-[6.875rem] lg:h-[6.875rem]"
       viewBox="0 0 80 80"
       //   className="rotate-[90deg]"
       style={{ transform: "rotate(90deg)" }}
@@ -58,12 +59,12 @@ export default function TransactionStats() {
   ];
 
   return (
-    <div className="poppins">
-      <div className="hidden md:flex lg:mb-8 md:mb-6 justify-between items-center ">
+    <div className="poppins w-full">
+      <div className="hidden w-full md:flex lg:mb-8 md:mb-6 justify-between items-center ">
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col lg:gap-[0.5rem] md:gap-[0.29rem] "
+            className="flex flex-col w-full lg:gap-[0.5rem] md:gap-[0.29rem] "
           >
             {/* gap-[0.99rem] md:gap-[0.5788rem] gap-[0.29rem] */}
             <CircularProgressDiv
@@ -71,7 +72,7 @@ export default function TransactionStats() {
               color={item.color}
               rotateValue={item.rotateValue}
             />
-            <p className="text-[#7E7E7E] lg:text-base md:text-[0.7718rem] font-semibold  ">
+            <p className="text-[#7E7E7E] lg:text-base md:text-[0.7rem] font-semibold  ">
               {item.label}
             </p>
             {/* text-[1.33rem] */}
@@ -85,7 +86,7 @@ export default function TransactionStats() {
         ))}
       </div>
 
-      <div className="md:hidden ">
+      <div className="md:hidden w-full">
         <div className="grid grid-cols-2 gap-[0.875rem] ">
           {data.slice(0, showAll ? data.length : 2).map((item, index) => (
             <div key={index} className="flex flex-col items-center">
