@@ -5,7 +5,7 @@ import TransactionHistory from "./UserTransactionHistory";
 export const UserTransaction = () => {
   return (
     <DashboardLayout>
-        <div className=" ">
+        <div className="w-full ">
           <TransactionAnalysis />
           <TransactionHistory />
         </div>
