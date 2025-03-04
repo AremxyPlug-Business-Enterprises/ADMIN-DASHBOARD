@@ -324,7 +324,7 @@ function Filters({ setOpenFilter }) {
               htmlFor="order-no"
               className="font-semibold text-[#7E7E7E] lg:text-base md:text-[0.579rem]"
             >
-              Order No
+              Order Email
             </label>
             <input
               type="number"
