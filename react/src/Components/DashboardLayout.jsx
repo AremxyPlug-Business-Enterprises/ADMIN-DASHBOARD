@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+/* eslint-disable react/prop-types */
+import  {useState} from 'react';
 import Profile1 from "../assets/profile-2user.png";
 import ArrowDown from "../assets/arrow-down.svg";
 import logOutIcon from "../assets/logout.svg";
@@ -21,6 +22,7 @@ import menu from "../assets/menu.svg"
 //This is the layout of the dashboard which contains the navbar and sidebar
 export const DashboardLayout = ({children}) => {
     const [dashboardOpen, setDashboardOpen] = useState(true);
+
   return (
     <div className="w-full relative">
         {/* THE NAVBAR */}
@@ -62,6 +64,7 @@ export const DashboardLayout = ({children}) => {
 </div>
 </div>
     </div>
+    
 {/* SIDE BAR */}
 {dashboardOpen ?  (
     <div className='fixed h-screen z-2 lg:w-[23%] md:w-[40%]  w-[70%] justify-between
@@ -230,6 +233,7 @@ export const DashboardLayout = ({children}) => {
      </Link>
      </div>
 )}
+
 <div className={`flex pt-[100px] px-[20px] 
      ${dashboardOpen ? "md:pl-[27%] md:pt-[200px]" : "md:pl-[10%]  md:pt-[200px]"}`}>
 {children}

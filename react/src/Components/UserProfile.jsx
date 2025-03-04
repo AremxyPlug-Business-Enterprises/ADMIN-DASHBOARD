@@ -9,17 +9,18 @@ import neewsletter from "../assets/newspaper.svg"
 import block from "../assets/user.svg"
 import find from "../assets/user_find.svg"
 import pin from "../assets/user_pin icon.svg"
+import { Link } from "react-router-dom"
 
 const userData = [
-  {title: 'User Analysis', img: analysis},
-  {title: 'Find user Account', img: find},
-  {title: 'Waitlist', img: waitlist},
-  {title: 'Reset User PIN', img: pin},
-  {title: 'Reset User Password', img: password},
-  {title: 'Newsletter', img: neewsletter},
-  {title: 'Block User Account', img: block},
-  {title: 'Unblock User Account', img: unblock},
-  {title: 'Delete User Account', img: deletes},
+  {title: 'User Analysis', img: analysis, path: "/UserProfile/UsersProfileAnalysis" },
+  {title: 'Find user Account', img: find, path: "/UserProfile/FindUser" },
+  {title: 'Waitlist', img: waitlist, path: "/UserProfile/UnblockUser"},
+  {title: 'Reset User PIN', img: pin, path: "/UserProfile/ResetPin"},
+  {title: 'Reset User Password', img: password, path: "/UserProfile/ResetPassword"},
+  {title: 'Newsletter', img: neewsletter, path: "/UserProfile/UnblockUser"},
+  {title: 'Block User Account', img: block, path: "/UserProfile/BlockUser"},
+  {title: 'Unblock User Account', img: unblock,  path: "/UserProfile/UnblockUser" },
+  {title: 'Delete User Account', img: deletes, path: "/UserProfile/UnblockUser"},
 ]
 
 
@@ -52,12 +53,13 @@ export const UserProfile = () => {
 
   <div className="grid grid-cols-3 justify-items-center lg:gap-10 gap-5">
     {userData.map((u,i)=> (
-      <div key={i} className="flex flex-col items-center justify-center  gap-4 py-[11px] px-[10px]
+      <Link to={u?.path}key={i} className="flex flex-col items-center justify-center  gap-4 py-[11px] px-[10px]
       bg-[#E4EBE9] border-[#9C9C9C] lg:max-w-[360px] lg:w-full lg:h-[239px] w-[100px] h-[125px]  md:w-[208px] md:h-[138px] rounded-[8px] lg:rounded-[16px]">
+       
 <img src={u.img} alt="profile_icon"   className="lg:w-[100px] lg:h-[100px] w-[53px] h-[53px] md:[57px] md:[57px]"/>
         <h1 className="lg:text-[22px] lg:leading-[33px] text-[12px] leading-[17px] md:text-[12px] md:leading-[19px] font-normal lg:font-medium text-[#000000] text-center">{u.title}</h1>
-
-      </div>
+</Link>
+   
     ))}
   </div>
 
