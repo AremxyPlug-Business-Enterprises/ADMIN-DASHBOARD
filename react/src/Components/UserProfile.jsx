@@ -1,3 +1,4 @@
+
 import { DashboardLayout } from "./DashboardLayout"
 import arrow from "../assets/arrow-right.png"
 import waitlist from "../assets/pad with list.svg"
@@ -66,5 +67,5 @@ export const UserProfile = () => {
 
 </section>
 </DashboardLayout>
-  )
+ )
 }
