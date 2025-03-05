@@ -1,8 +1,9 @@
 // import React from 'react'
 
 import { DashboardLayout } from "../DashboardLayout"
+import UserProfileAnalysisTable from "./UserProfileAnalysisTable"
 import UsersProfileAnalysis from "./usersProfileAnalysis"
-import UsersProfileHistory from "./UsersProfileHistory"
+
 
 
 const UsersAnalysis = () => {
@@ -10,7 +11,7 @@ const UsersAnalysis = () => {
 <DashboardLayout>
 <div className="w-full ">
     <UsersProfileAnalysis  />
-    <UsersProfileHistory />
+    <UserProfileAnalysisTable />
     </div>
 </DashboardLayout>
   )
