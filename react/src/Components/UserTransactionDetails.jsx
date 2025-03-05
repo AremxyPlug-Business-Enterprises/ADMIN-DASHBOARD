@@ -78,6 +78,7 @@ MobileUserDetails.propTypes = {
 };
 
 export default function UserTransactionDetails() {
+  // eslint-disable-next-line no-unused-vars
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [selectPage, setSelectPage] = useState(false);
   return (

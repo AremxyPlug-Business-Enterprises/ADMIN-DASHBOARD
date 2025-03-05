@@ -29,11 +29,13 @@ export default function TransactionHistory() {
           />
         </p>
       </div>
+
       <div className="">
         <Search setOpenFilter={setOpenFilter} />
         <UserTransactionDetails />
         {openFilter && <Filters setOpenFilter={setOpenFilter} />}
       </div>
+
     </div>
   );
 }
@@ -352,6 +354,7 @@ function Filters({ setOpenFilter }) {
         <div className="flex items-center justify-center mt-8 pb-6  ">
           <Button onClick={() => setOpenFilter(false)}>Apply Filter</Button>
         </div>
+        
       </div>
     </div>
   );

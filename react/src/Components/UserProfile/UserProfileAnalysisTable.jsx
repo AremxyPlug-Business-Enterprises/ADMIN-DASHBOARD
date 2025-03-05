@@ -1,17 +1,17 @@
-import Previous from "../assets/Previous.png";
-import Next from "../assets/Next.png";
-import DownArrow from "../assets/down.png";
-import ArrowDown from "../assets/arrow-down.svg";
-import ArrowRight from "../assets/arrow-right.png";
-import PreviousArrow from "../assets/previous-arrow.png";
-import NoTransaction from "../assets/no-transaction.png";
+import Previous from "../../assets/Previous.png";
+import Next from "../../assets/Next.png";
+import DownArrow from "../../assets/down.png";
+import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowRight from "../../assets/arrow-right.png";
+import PreviousArrow from "../../assets/previous-arrow.png";
+import NoTransaction from "../../assets/no-transaction.png";
 
-import { StatusButton } from "./UserTransactionButtons";
 
 import { useState } from "react";
 import PropTypes from "prop-types";
+import { StatusButton } from "../UserTransactionButtons";
 
-function UserDetails() {
+function UserAnalysisDetails() {
   return (
     <>
       <td className="pr-[0.5rem] pl-[0.8rem] lg:py-[0.625rem] lg:text-base md:text-[0.7rem] md:py-[1rem] ">
@@ -77,46 +77,67 @@ MobileUserDetails.propTypes = {
   bgColor: PropTypes.string,
 };
 
-export default function UserTransactionDetails() {
+export default function UserProfileAnalysisTable() {
+  // eslint-disable-next-line no-unused-vars
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [selectPage, setSelectPage] = useState(false);
   return (
     <>
       {showUserDetails ? (
         <>
-          <div className="hidden lg:block md:block lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full lg:mb-12 md:mb-10 lg:mt-14 md:mt-12 lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.53px_0px_rgba(0,0,0,0.25)] ">
+          <div className="hidden lg:block md:block lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full
+           lg:mb-12 md:mb-10 lg:mt-14 md:mt-12 lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.53px_0px_rgba(0,0,0,0.25)] ">
             <div className="lg:mt-4 md:mt-2 w-full">
               <table className="font-semibold w-full">
-                <thead className="w-full text-left lg:text-base md:text-[0.7rem] md:leading-[0.753125rem] ">
-                  <tr className="bg-[#C8D5FE] w-full ">
+
+                <thead className="w-full text-left lg:text-base md:text-[0.7rem]
+                 md:leading-[0.753125rem] ">
+
+                  <tr className="bg-[#C8D5FE] w-full  ">
                     <th className="lg:px-[0.8rem] lg:py-[1.5rem] md:px-[0.5rem] md:py-[1.1rem] lg:rounded-tl-[0.5rem] md:rounded-tl-[0.434375rem]">
-                      Customer Name
+                      Country
+                    </th>
+
+                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
+                     Customer Name
+                    </th>
+
+                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
+                   Username
+                    </th>
+
+                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
+                     User ID
                     </th>
                     <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
-                      Products
+                     Email
                     </th>
                     <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
-                      Description
-                    </th>
-                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
-                      Order No
-                    </th>
-                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
-                      Amount
-                    </th>
-                    <th className="lg:px-[0.8rem] lg:py-[1.2rem] md:px-[0.5rem] md:py-[1.1rem]">
-                      Date & Time
+                Phone Number
                     </th>
                     <th className="lg:pl-[4rem] md:pl-[2.5rem] px-[0.5rem] py-[0.625rem] lg:rounded-tr-[0.5rem] md:rounded-tr-[0.434375rem] ">
-                      Status
+                    Signup Date & Time
                     </th>
+
+                    <th className="lg:pl-[4rem] md:pl-[2.5rem] px-[0.5rem] py-[0.625rem] lg:rounded-tr-[0.5rem] md:rounded-tr-[0.434375rem] ">
+                    Last Ativity
+                    </th>
+
+                    <th className="lg:pl-[4rem] md:pl-[2.5rem] px-[0.5rem] py-[0.625rem] lg:rounded-tr-[0.5rem] md:rounded-tr-[0.434375rem] ">
+                     Account Status
+                    </th>
+
+                    <th className="lg:pl-[4rem] md:pl-[2.5rem] px-[0.5rem] py-[0.625rem] lg:rounded-tr-[0.5rem] md:rounded-tr-[0.434375rem] ">
+                     Verified Status
+                    </th>
+
                   </tr>
                 </thead>
 
                 <tbody className="font-medium text-left w-full ">
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -135,7 +156,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#FAB329">Pending</StatusButton>
@@ -149,7 +170,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Failed</StatusButton>
@@ -163,7 +184,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#92ABFE">Refunded</StatusButton>
@@ -177,7 +198,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Failed</StatusButton>
@@ -191,7 +212,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -207,7 +228,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Cancelled</StatusButton>
@@ -221,7 +242,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -237,7 +258,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -253,7 +274,7 @@ export default function UserTransactionDetails() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#92ABFE">Refunded</StatusButton>
@@ -266,7 +287,7 @@ export default function UserTransactionDetails() {
                     </td>
                   </tr>
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -280,7 +301,9 @@ export default function UserTransactionDetails() {
                       </div>
                     </td>
                   </tr>
+
                 </tbody>
+
               </table>
 
               <div className="flex justify-center items-center lg:mt-14 md:mt-10 lg:pb-8 md:pb-6 lg:gap-[2.875rem] md:gap-[1.665rem] font-medium text-[#3D3D3D] ">
@@ -427,21 +450,31 @@ export default function UserTransactionDetails() {
               </span>
             </div>
           </div>
+
         </>
+
       ) : (
-        <div className="bg-white lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full mb-10 lg:mb-12 md:mb-10 lg:mt-14 md:mt-12 lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.53px_0px_rgba(0,0,0,0.25)]  ">
-          <div className="hidden md:block lg:mt-4 md:mt-2 w-full rounded-[12px] ">
-            <ul className="bg-[#C8D5FE] w-full flex justify-between px-[0.8rem] lg:px-[0.8rem] lg:py-[1.8rem] py-[1.8rem] md:px-[0.5rem] md:py-[1.5rem] rounded-t-[0.5rem] lg:rounded-t-[0.5rem] md:rounded-t-[0.434375rem] text-left font-semibold lg:text-base lg:leading-[1.3rem] md:text-[0.8rem] md:leading-[0.753125rem]">
+        <div className="bg-re-500 lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full 
+         mb-10 lg:mb-12 md:mb-10 lg:mt-14 md:mt-12 lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.53px_0px_rgba(0,0,0,0.25)]  ">
+
+          <div className="hidden md:block lg:mt-0 md:mt-2 w-full rounded-[12px] scrollbar overflow-x-auto">
+            
+            <ul className="bg-[#C8D5FE] w-full flex justify-between px-[0.8rem] lg:px-[0.8rem] lg:py-[1.8rem] 
+            py-[1.8rem] md:px-[0.5rem] md:py-[1.5rem] rounded-t-[0.5rem] lg:w-[1793px] md:w-[1038px] overflow-x-scroll
+  lg:rounded-t-[0.5rem] md:rounded-t-[0.434375rem] text-left font-semibold lg:text-base lg:leading-[1.3rem] scrollbar-hidden
+  md:text-[0.8rem] md:leading-[0.753125rem]">
+            <li className="">Country</li>
               <li className="">Customer Name</li>
-              <li>Products</li>
-              <li>Description</li>
-              <li>Order No</li>
-              <li>Amount</li>
-              <li>Date & Time</li>
-              <li>Status</li>
+              <li>Username</li>
+              <li>User ID</li>
+              <li>Email</li>
+              <li> Signup Date & Time </li>
+              <li> Last Activity </li>
+              <li>Account Status</li>
+              <li> Verified Status</li>
             </ul>
 
-            <div className="flex flex-col w-full justify-center items-center py-[2rem] ">
+            <div className="flex flex-col w-full justify-center items-center py-[2rem] md:w-[1034px] lg:w-[1792px]  overflow-x-auto ">
               <img
                 src={NoTransaction}
                 alt="No Transaction Image"
@@ -454,7 +487,7 @@ export default function UserTransactionDetails() {
             {/* text-[2.5rem] leading-[3.25rem] */}
           </div>
 
-          <div className="md:hidden flex flex-col w-full justify-center items-center py-[2rem] ">
+          <div className="md:hidden flex flex-col w-full justify-center items-center py-[2rem]  ">
             <img
               src={NoTransaction}
               alt="No Transaction Image"
@@ -464,7 +497,9 @@ export default function UserTransactionDetails() {
               No Transaction Found !
             </p>
           </div>
+
         </div>
+
       )}
     </>
   );
