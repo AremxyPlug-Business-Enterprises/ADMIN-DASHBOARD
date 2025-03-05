@@ -1,5 +1,4 @@
-import { useState } from "react";
-import PropTypes from "prop-types";
+// import React from 'react'
 
 import ArrowRight from "../../assets/arrow-right.png";
 import SearchIcon from "../../assets/SearchIcon.png";
@@ -8,20 +7,26 @@ import Export from "../../assets/export.png";
 import Filter from "../../assets/filter-icon.png";
 import FilterArrow from "../../assets/filter-arrow-down.png";
 
-import UserTransactionDetails from "../../Components/User-Transactions/UserTransactionDetails";
+
+
+
+
+import { useState } from "react";
+import PropTypes from "prop-types";
 import { Button } from "../../Components/User-Transactions/UserTransactionButtons";
+// import UserTransactionDetails from "../UserTransactionDetails";
+import UserProfileAnalysisTable from './UserProfileAnalysisTable'
 
 
 
-
-export default function TransactionHistory() {
+const UsersProfileHistory = () => {
   const [openFilter, setOpenFilter] = useState(false);
   return (
     <div className="lg:mt-10 mt-8 relative w-full">
       <div className="poppins w-full">
         <p className="flex items-center gap-[0.595625rem] lg:gap-[0.595rem] md:gap-[0.345rem] mb-4 lg:mt-8 lg:mb-4 md:mt-6 md:mb-3 w-full">
           <span className="text-[#7C7C7C] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] lg:leading-[2.49rem] md:leading-[1.035rem] ">
-            Transactions History
+     Users Profile
           </span>
           <img
             src={ArrowRight}
@@ -30,13 +35,11 @@ export default function TransactionHistory() {
           />
         </p>
       </div>
-
       <div className="">
         <Search setOpenFilter={setOpenFilter} />
-        <UserTransactionDetails />
+        < UserProfileAnalysisTable />
         {openFilter && <Filters setOpenFilter={setOpenFilter} />}
       </div>
-
     </div>
   );
 }
@@ -148,6 +151,7 @@ function Filters({ setOpenFilter }) {
   const paymentMethods = ["NGN", "USD", "GBP", "EUR", "AUD", "KES"];
   return (
     <div className="backdrop-filter bg-[rgb(255,255,255)] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] lg:left-0 md:left-1 w-full flex items-center justify-center ">
+
       <div className="poppins border-[0.5px] lg:border-[0.5px] md:border-[0.29px] border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-[21.75rem]  lg:w-full lg:h-[36.47rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
         <h5 className="text-base lg:text-[1.5rem] md:text-[0.86875rem] font-medium leading-[1.3rem] lg:leading-[1.95rem] md:leading-[1.1293rem] pb-3 lg:pb-4 ">
           Filters
@@ -223,6 +227,7 @@ function Filters({ setOpenFilter }) {
             )}
             {/* w-[19rem] h-[3.1875rem] */}
           </li>
+
           <li className="relative flex flex-col gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <p className="relative font-semibold text-[#7E7E7E] lg:text-base md:text-[0.579rem] ">
               Payment method
@@ -272,6 +277,7 @@ function Filters({ setOpenFilter }) {
               id="user-id"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="username"
@@ -285,6 +291,7 @@ function Filters({ setOpenFilter }) {
               id="username"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="customer-email"
@@ -298,6 +305,7 @@ function Filters({ setOpenFilter }) {
               id="customer-email"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="Virtual Account"
@@ -311,12 +319,13 @@ function Filters({ setOpenFilter }) {
               id="Virtual Account"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="order-no"
               className="font-semibold text-[#7E7E7E] lg:text-base md:text-[0.579rem]"
             >
-              Order No
+              Order Email
             </label>
             <input
               type="number"
@@ -324,6 +333,7 @@ function Filters({ setOpenFilter }) {
               id="order-no"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="transaction-id"
@@ -337,6 +347,7 @@ function Filters({ setOpenFilter }) {
               id="transaction-id"
             />
           </li>
+
           <li className="flex flex-col  gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <label
               htmlFor="ref-no"
@@ -364,3 +375,5 @@ function Filters({ setOpenFilter }) {
 Filters.propTypes = {
   setOpenFilter: PropTypes.func,
 };
+
+export default UsersProfileHistory
