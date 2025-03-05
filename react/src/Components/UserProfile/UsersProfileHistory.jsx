@@ -14,7 +14,8 @@ import FilterArrow from "../../assets/filter-arrow-down.png";
 import { useState } from "react";
 import PropTypes from "prop-types";
 import { Button } from "../UserTransactionButtons";
-import UserTransactionDetails from "../UserTransactionDetails";
+// import UserTransactionDetails from "../UserTransactionDetails";
+import UserProfileAnalysisTable from './UserProfileAnalysisTable'
 
 
 
@@ -36,7 +37,7 @@ const UsersProfileHistory = () => {
       </div>
       <div className="">
         <Search setOpenFilter={setOpenFilter} />
-        <UserTransactionDetails />
+        < UserProfileAnalysisTable />
         {openFilter && <Filters setOpenFilter={setOpenFilter} />}
       </div>
     </div>

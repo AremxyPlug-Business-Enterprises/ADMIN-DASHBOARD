@@ -11,7 +11,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import { StatusButton } from "../UserTransactionButtons";
 
-function UserDetails() {
+function UserAnalysisDetails() {
   return (
     <>
       <td className="pr-[0.5rem] pl-[0.8rem] lg:py-[0.625rem] lg:text-base md:text-[0.7rem] md:py-[1rem] ">
@@ -78,6 +78,7 @@ MobileUserDetails.propTypes = {
 };
 
 export default function UserProfileAnalysisTable() {
+  // eslint-disable-next-line no-unused-vars
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [selectPage, setSelectPage] = useState(false);
   return (
@@ -136,7 +137,7 @@ export default function UserProfileAnalysisTable() {
                 <tbody className="font-medium text-left w-full ">
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -155,7 +156,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#FAB329">Pending</StatusButton>
@@ -169,7 +170,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Failed</StatusButton>
@@ -183,7 +184,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#92ABFE">Refunded</StatusButton>
@@ -197,7 +198,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Failed</StatusButton>
@@ -211,7 +212,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -227,7 +228,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#F95252">Cancelled</StatusButton>
@@ -241,7 +242,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -257,7 +258,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
@@ -273,7 +274,7 @@ export default function UserProfileAnalysisTable() {
                   </tr>
 
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#92ABFE">Refunded</StatusButton>
@@ -286,7 +287,7 @@ export default function UserProfileAnalysisTable() {
                     </td>
                   </tr>
                   <tr className="text-[#7E7E7E] border-b-[0.5px] border-b-[#9C9C9C]   ">
-                    <UserDetails />
+                    <UserAnalysisDetails />
                     <td className="lg:px-[0.8rem] lg:py-[1.2rem] md:py-[1rem] md:px-[0.8rem]">
                       <div className="flex items-center gap-2">
                         <StatusButton bgColor="#26D06F">
