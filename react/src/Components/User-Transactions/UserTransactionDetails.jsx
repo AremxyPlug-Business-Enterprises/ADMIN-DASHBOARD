@@ -1,15 +1,17 @@
-import Previous from "../assets/Previous.png";
-import Next from "../assets/Next.png";
-import DownArrow from "../assets/down.png";
-import ArrowDown from "../assets/arrow-down.svg";
-import ArrowRight from "../assets/arrow-right.png";
-import PreviousArrow from "../assets/previous-arrow.png";
-import NoTransaction from "../assets/no-transaction.png";
+import { useState } from "react";
+import PropTypes from "prop-types";
+
+
+import Previous from "../../assets/Previous.png";
+import Next from "../../assets/Next.png";
+import DownArrow from "../../assets/down.png";
+import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowRight from "../../assets/arrow-right.png";
+import PreviousArrow from "../../assets/previous-arrow.png";
+import NoTransaction from "../../assets/no-transaction.png";
 
 import { StatusButton } from "./UserTransactionButtons";
 
-import { useState } from "react";
-import PropTypes from "prop-types";
 
 function UserDetails() {
   return (
