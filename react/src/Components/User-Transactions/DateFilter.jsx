@@ -3,8 +3,8 @@ import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 
-import SelectDateIcon from "../assets/SelectDateIcon.png";
-import ChevronDown from "../assets/chevron-down.png";
+import SelectDateIcon from "../../assets/SelectDateIcon.png";
+import ChevronDown from "../../assets/chevron-down.png";
 
 export default function DateFilter() {
   const [selectFilter, setSelectFilter] = useState(false);

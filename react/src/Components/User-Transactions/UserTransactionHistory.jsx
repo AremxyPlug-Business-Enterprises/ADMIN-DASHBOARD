@@ -1,15 +1,16 @@
-import ArrowRight from "../assets/arrow-right.png";
-import SearchIcon from "../assets/SearchIcon.png";
-import Calendar from "../assets/calendar.png";
-import Export from "../assets/export.png";
-import Filter from "../assets/filter-icon.png";
-import FilterArrow from "../assets/filter-arrow-down.png";
-
-import UserTransactionDetails from "./UserTransactionDetails";
-import { Button } from "./UserTransactionButtons";
-
 import { useState } from "react";
 import PropTypes from "prop-types";
+
+import ArrowRight from "../../assets/arrow-right.png";
+import SearchIcon from "../../assets/SearchIcon.png";
+import Calendar from "../../assets/calendar.png";
+import Export from "../../assets/export.png";
+import Filter from "../../assets/filter-icon.png";
+import FilterArrow from "../../assets/filter-arrow-down.png";
+
+import UserTransactionDetails from "../../Components/User-Transactions/UserTransactionDetails";
+import { Button } from "../../Components/User-Transactions/UserTransactionButtons";
+
 
 
 

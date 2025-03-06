@@ -13,7 +13,7 @@ import FilterArrow from "../../assets/filter-arrow-down.png";
 
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Button } from "../UserTransactionButtons";
+import { Button } from "../../Components/User-Transactions/UserTransactionButtons";
 // import UserTransactionDetails from "../UserTransactionDetails";
 import UserProfileAnalysisTable from './UserProfileAnalysisTable'
 
