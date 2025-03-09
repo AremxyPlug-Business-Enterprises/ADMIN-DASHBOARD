@@ -4,6 +4,7 @@ import ArrowRight from "../../assets/arrow-right.png";
 
 import { Button } from "./UserTransactionButtons";
 import ProductsTransactionAnalysis from "./ProductsTransactionAnalysis";
+import { Link } from "react-router-dom";
 
 export default function TransactionAnalysis() {
   const [productTab, setProductTab] = useState("All Products");
@@ -11,7 +12,7 @@ export default function TransactionAnalysis() {
   const selectProducts = ["All Products", "Customize Products"];
 
   return (
-    <section className="poppins md:w-full max-md:max-w-[48rem] ">
+    <section className=".poppins md:w-full max-md:max-w-[48rem] ">
       <Transactions />
       <div className="w-full">
         <p className="flex items-center gap-[0.375rem] lg:gap-[0.83rem] md:gap-[0.4825rem] my-6 lg:mt-8 md:mt-6  ">
@@ -57,7 +58,7 @@ export default function TransactionAnalysis() {
 
 function Transactions() {
   return (
-    <div className="poppins w-full">
+    <div className=".poppins w-full">
       <h1 className="font-semibold text-[1.25rem] leading-[1.875] lg:text-[2.33rem] lg:leading-[3.495rem] text-[#9C9C9C] md:leading-[2.02rem] md:text-[1.35rem]">
         User Transactions
       </h1>
@@ -76,7 +77,9 @@ function Transactions() {
       </p>
       <div className="flex gap-6 lg:gap-[13.29px] md:gap-[7.69px] lg:mt-4 mt-4 md:mt-2">
         <Button>Wallet Analysis</Button>
+        <Link to="/SalesAnalysis">
         <Button>Sales Analysis</Button>
+        </Link>
       </div>
     </div>
   );
