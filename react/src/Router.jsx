@@ -19,6 +19,7 @@ import ResetPin from "./Components/UserProfile/ResetPin";
 import ResetPassword from "./Components/UserProfile/ResetPassword";
 import DeleteUser from "./Components/UserProfile/DeleteUser";
 import UsersAnalysis from "./Components/UserProfile/usersAnalysis";
+import PointAnalysis from "./Components/PointAnalysis/PointAnalysis";
 
 // import { CreatePasswordConfirmation,  } from "./Components/Auth/Confirmation";
 export const Router = () => {
@@ -50,6 +51,9 @@ export const Router = () => {
      <Route path ="/WebConfig" element={<WebConfig/>}/>
      <Route path ="/Notification" element={<Notification/>}/>
      <Route path ="/ProfileSettings" element={<ProfileSettings/>}/>
+
+     {/* Point Analysis */}
+     <Route path ="/PointAnalysis" element={<PointAnalysis/>} />
    
   </Routes>
 
