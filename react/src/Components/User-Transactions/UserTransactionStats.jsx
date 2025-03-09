@@ -60,7 +60,7 @@ export default function TransactionStats() {
   ];
 
   return (
-    <div className="poppins w-full">
+    <div className=".poppins w-full">
       <div className="hidden w-full md:flex lg:mb-8 md:mb-6 justify-between items-center ">
         {data.map((item, index) => (
           <div
