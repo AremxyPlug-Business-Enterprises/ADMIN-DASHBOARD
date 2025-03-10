@@ -11,7 +11,8 @@ import NoTransaction from "../../assets/no-transaction.png";
 
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { StatusButton } from "../UserTransactionButtons";
+import { StatusButton } from "../User-Transactions/UserTransactionButtons";
+
 
 function UserAnalysisDetails() {
   return (

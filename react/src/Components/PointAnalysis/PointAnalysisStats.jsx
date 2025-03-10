@@ -1,7 +1,9 @@
 import ArrowRight from "../../assets/arrow-right.png";
 import ArrowDown from "../../assets/arrow-down.svg";
-import DateFilter from "../DateFilter";
-import { Button } from "../UserTransactionButtons";
+
+
+import DateFilter from "../User-Transactions/DateFilter";
+import { Button } from "../User-Transactions/UserTransactionButtons";
 
 const statdata = [
     {color: "#D5F6E3", title:"Transaction Points", point: "10,000,000"},

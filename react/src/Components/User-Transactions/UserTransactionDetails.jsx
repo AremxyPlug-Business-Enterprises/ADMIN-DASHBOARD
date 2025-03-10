@@ -1,15 +1,17 @@
-import Previous from "../assets/Previous.png";
-import Next from "../assets/Next.png";
-import DownArrow from "../assets/down.png";
-import ArrowDown from "../assets/arrow-down.svg";
-import ArrowRight from "../assets/arrow-right.png";
-import PreviousArrow from "../assets/previous-arrow.png";
-import NoTransaction from "../assets/no-transaction.png";
+import { useState } from "react";
+import PropTypes from "prop-types";
+
+
+import Previous from "../../assets/Previous.png";
+import Next from "../../assets/Next.png";
+import DownArrow from "../../assets/down.png";
+import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowRight from "../../assets/arrow-right.png";
+import PreviousArrow from "../../assets/previous-arrow.png";
+import NoTransaction from "../../assets/no-transaction.png";
 
 import { StatusButton } from "./UserTransactionButtons";
 
-import { useState } from "react";
-import PropTypes from "prop-types";
 
 function UserDetails() {
   return (
@@ -47,12 +49,12 @@ function MobileUserDetails({ orderId, description, product, bgColor }) {
   return (
     <div className="flex justify-between py-[1.25rem] px-1 border-b border-b-[#00000033] ">
       <ul className="flex flex-col gap-2.5 items-start text-[0.875rem] leading-[1.1375rem] ">
-        <li className="poppins text-[#7E7E7E] ">Habib Kamaldeen</li>
+        <li className=".poppins text-[#7E7E7E] ">Habib Kamaldeen</li>
         <li className="text-[#7C7C7C]">{orderId}</li>
         <li className="text-[#7C7C7C] ">{product}</li>
-        <li className="poppins">{description}</li>
+        <li className=".poppins">{description}</li>
       </ul>
-      <ul className="poppins text-[#7C7C7C] flex flex-col gap-2.5 items-end text-[0.875rem] leading-[1.1375rem] ">
+      <ul className=".poppins text-[#7C7C7C] flex flex-col gap-2.5 items-end text-[0.875rem] leading-[1.1375rem] ">
         <li>
           <StatusButton bgColor={bgColor}>{statusText}</StatusButton>
         </li>

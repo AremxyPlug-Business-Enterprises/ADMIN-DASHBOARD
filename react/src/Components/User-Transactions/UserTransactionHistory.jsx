@@ -1,15 +1,16 @@
-import ArrowRight from "../assets/arrow-right.png";
-import SearchIcon from "../assets/SearchIcon.png";
-import Calendar from "../assets/calendar.png";
-import Export from "../assets/export.png";
-import Filter from "../assets/filter-icon.png";
-import FilterArrow from "../assets/filter-arrow-down.png";
-
-import UserTransactionDetails from "./UserTransactionDetails";
-import { Button } from "./UserTransactionButtons";
-
 import { useState } from "react";
 import PropTypes from "prop-types";
+
+import ArrowRight from "../../assets/arrow-right.png";
+import SearchIcon from "../../assets/SearchIcon.png";
+import Calendar from "../../assets/calendar.png";
+import Export from "../../assets/export.png";
+import Filter from "../../assets/filter-icon.png";
+import FilterArrow from "../../assets/filter-arrow-down.png";
+
+import UserTransactionDetails from "../../Components/User-Transactions/UserTransactionDetails";
+import { Button } from "../../Components/User-Transactions/UserTransactionButtons";
+
 
 
 
@@ -17,7 +18,7 @@ export default function TransactionHistory() {
   const [openFilter, setOpenFilter] = useState(false);
   return (
     <div className="lg:mt-10 mt-8 relative w-full">
-      <div className="poppins w-full">
+      <div className=".poppins w-full">
         <p className="flex items-center gap-[0.595625rem] lg:gap-[0.595rem] md:gap-[0.345rem] mb-4 lg:mt-8 lg:mb-4 md:mt-6 md:mb-3 w-full">
           <span className="text-[#7C7C7C] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] lg:leading-[2.49rem] md:leading-[1.035rem] ">
             Transactions History
@@ -58,7 +59,7 @@ export function Search({ setOpenFilter }) {
         className="absolute top-[.9rem] md:top-[0.65rem] lg:top-1/3 left-2 lg:left-[0.5rem] md:left-[0.3rem] w-[0.893125rem] h-[0.893125rem] lg:w-[0.8925rem] lg:h-[0.8925rem] md:w-[0.5175rem] md:h-[0.5175rem]  "
       />
       <span className="flex flex-col w-full md:flex-row md:items-center gap-[1.0625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] ">
-        <p className="poppins w-full flex items-center justify-center gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] rounded-[4px] lg:rounded-[4px] md:rounded-[2.32px] border lg:border md:border-[0.58px] border-[#D0D5DD] p-[0.625rem] px-10 md:p-[0.361875rem] lg:px-[0.625rem] lg:py-[0.55rem] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] text-[#344054] mr-2 ">
+        <p className=".poppins w-full flex items-center justify-center gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] rounded-[4px] lg:rounded-[4px] md:rounded-[2.32px] border lg:border md:border-[0.58px] border-[#D0D5DD] p-[0.625rem] px-10 md:p-[0.361875rem] lg:px-[0.625rem] lg:py-[0.55rem] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] text-[#344054] mr-2 ">
           <span className="">2024-01-07</span>
           <span className="">~</span>
           <span className="">2024-01-08</span>
@@ -146,8 +147,8 @@ function Filters({ setOpenFilter }) {
   const products = ["All Products", "Telecom", "Payments", "Card issung"];
   const paymentMethods = ["NGN", "USD", "GBP", "EUR", "AUD", "KES"];
   return (
-    <div className="backdrop-filter bg-[rgb(255,255,255)] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] lg:left-0 md:left-1 w-full flex items-center justify-center ">
-      <div className="poppins border-[0.5px] lg:border-[0.5px] md:border-[0.29px] border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-[21.75rem]  lg:w-full lg:h-[36.47rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
+    <div className="backdrop-filter bg-[rgb(255,255,255)] absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] lg:left-0 md:left-1 w-full flex items-center justify-center ">
+      <div className=".poppins border-[0.5px] lg:border-[0.5px] md:border-[0.29px] border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-[21.75rem]  lg:w-full lg:h-[36.47rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
         <h5 className="text-base lg:text-[1.5rem] md:text-[0.86875rem] font-medium leading-[1.3rem] lg:leading-[1.95rem] md:leading-[1.1293rem] pb-3 lg:pb-4 ">
           Filters
         </h5>
@@ -164,13 +165,13 @@ function Filters({ setOpenFilter }) {
               <img
                 src={FilterArrow}
                 alt="Arrow down"
-                className={`lg:w-6 lg:h-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
+                className={`lg:w-6 lg:h-6 h-6 w-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
                   showStatusDropdown ? "rotate-180" : ""
                 }`}
               />
             </span>
             {showStatusDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 md:top-[4rem] lg:top-[5.5rem] lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white z-1 py-2 px-1">
                 {statuses.map((stat, index) => (
                   <li
                     key={index}
@@ -199,13 +200,13 @@ function Filters({ setOpenFilter }) {
               <img
                 src={FilterArrow}
                 alt="Arrow down"
-                className={`lg:w-6 lg:h-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
+                className={`lg:w-6 lg:h-6 h-6 w-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
                   showProductsDropdown ? "rotate-180" : ""
                 }`}
               />
             </span>
             {showProductsDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 md:top-[4rem] lg:top-[5.5rem] lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white z-1 py-2 px-1">
                 {products.map((prod, index) => (
                   <li
                     key={index}
@@ -234,13 +235,13 @@ function Filters({ setOpenFilter }) {
               <img
                 src={FilterArrow}
                 alt="Arrow down"
-                className={`lg:w-6 lg:h-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
+                className={`lg:w-6 lg:h-6 h-6 w-6 md:w-[0.868125rem] md:h-[0.868125rem] absolute right-1 lg:top-3 transition-transform duration-300 ${
                   showPaymentMethodDropdown ? "rotate-180" : ""
                 }`}
               />
             </span>
             {showPaymentMethodDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 md:top-[4rem] lg:top-[5.5rem] lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
                 {paymentMethods.map((payment, index) => (
                   <li
                     key={index}
@@ -267,7 +268,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="user-id"
             />
           </li>
@@ -280,7 +281,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="text"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="username"
             />
           </li>
@@ -293,7 +294,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="email"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="customer-email"
             />
           </li>
@@ -306,7 +307,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="text"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="Virtual Account"
             />
           </li>
@@ -319,7 +320,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="order-no"
             />
           </li>
@@ -332,7 +333,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="transaction-id"
             />
           </li>
@@ -345,7 +346,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className="poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="ref-no"
             />
           </li>

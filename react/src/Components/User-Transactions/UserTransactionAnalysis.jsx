@@ -1,21 +1,18 @@
 import { useState } from "react";
 
-import ArrowRight from "../assets/arrow-right.png";
-import ArrowDown from "../assets/arrow-down.svg";
+import ArrowRight from "../../assets/arrow-right.png";
 
 import { Button } from "./UserTransactionButtons";
-import TransactionStats from "./UserTransactionStats";
-import DateFilter from "./DateFilter";
-
-
+import ProductsTransactionAnalysis from "./ProductsTransactionAnalysis";
+import { Link } from "react-router-dom";
 
 export default function TransactionAnalysis() {
   const [productTab, setProductTab] = useState("All Products");
-  
+
   const selectProducts = ["All Products", "Customize Products"];
-  
+
   return (
-    <section className="poppins md:w-full max-md:max-w-[48rem] ">
+    <section className=".poppins md:w-full max-md:max-w-[48rem] ">
       <Transactions />
       <div className="w-full">
         <p className="flex items-center gap-[0.375rem] lg:gap-[0.83rem] md:gap-[0.4825rem] my-6 lg:mt-8 md:mt-6  ">
@@ -44,28 +41,16 @@ export default function TransactionAnalysis() {
             </p>
           ))}
         </div>
+       
 
-        <div className="w-full lg:shadow-[0px_0px_9.19px_0px_rgba(0,0,0,0.25)] mt-8 md:mt-6 p-[1.25rem] rounded-2xl lg:rounded-[1.33rem] md:rounded-[0.7718rem] lg:py-[3.33rem] md:py-[1.92875rem] md:px-[0.8rem] flex flex-col gap-[2.5rem] border border-[#77777733] lg:gap-[1.66rem] md:gap-[0.9643rem] md:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)]">
-          
-          <span className="w-full px-3 lg:px-6 md:px-4 flex items-center justify-between cursor-pointer">
-            <span className="rounded-[4px] lg:rounded-[19.59px] md:rounded-[11.34px] bg-[#92ABFE2E] flex items-center gap-[0.941875rem] lg:gap-[0.941875rem] md:gap-[0.5456rem] py-[0.470625rem] lg:py-[0.47rem] md:py-[0.2725rem] px-[0.8325rem] lg:px-[0.83rem] md:px-[0.4825rem] ">
-              <span className="text-[0.83rem] md:font-semibold">NGN</span>
-              <img
-                src={ArrowDown}
-                alt=""
-                className="inline-block w-[1.318125rem] h-[1.318125rem] lg:w-[1.31rem] lg:h-[1.31rem] md:w-[0.76375rem] md:h-[0.76375rem] "
-              />
-            </span>
-
-            {/* <input type="date" name="" id="" /> */}
-            <DateFilter />
-            
-          </span>
-
-          <div className="">
-            <TransactionStats />
-          </div>
-        </div>
+         {productTab === "All Products" && <ProductsTransactionAnalysis />}
+        {productTab === "Customize Products" && <ProductsTransactionAnalysis>
+          <select name="" id="" className=".poppins font-semibold leading-[20.8px] border border-[#0000004D] rounded-[8px] w-[16rem] h-[2.75rem] outline-none flex items-center ">
+            <option value="">Payment</option>
+            <option value="">Telecom</option>
+            <option value="">Card issuing</option>
+        </select>
+         </ProductsTransactionAnalysis>} 
       </div>
     </section>
   );
@@ -73,7 +58,7 @@ export default function TransactionAnalysis() {
 
 function Transactions() {
   return (
-    <div className="poppins w-full">
+    <div className=".poppins w-full">
       <h1 className="font-semibold text-[1.25rem] leading-[1.875] lg:text-[2.33rem] lg:leading-[3.495rem] text-[#9C9C9C] md:leading-[2.02rem] md:text-[1.35rem]">
         User Transactions
       </h1>
@@ -92,7 +77,9 @@ function Transactions() {
       </p>
       <div className="flex gap-6 lg:gap-[13.29px] md:gap-[7.69px] lg:mt-4 mt-4 md:mt-2">
         <Button>Wallet Analysis</Button>
+        <Link to="/SalesAnalysis">
         <Button>Sales Analysis</Button>
+        </Link>
       </div>
     </div>
   );
