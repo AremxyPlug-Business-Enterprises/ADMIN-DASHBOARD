@@ -19,8 +19,12 @@ import ResetPin from "./Components/UserProfile/ResetPin";
 import ResetPassword from "./Components/UserProfile/ResetPassword";
 import DeleteUser from "./Components/UserProfile/DeleteUser";
 import UsersAnalysis from "./Components/UserProfile/usersAnalysis";
+
+
+// import PointAnalysis from "./Components/PointAnalysis/PointAnalysis";
 import SalesAnalysis from "./Components/Sales Analysis/SalesAnalysis";
-import AllSalesStats from "./Components/Sales Analysis/SalesTransactionStats";
+import PointAnalysis from "./Components/PointAnalysis/PointAnalysis";
+// import AllSalesStats from "./Components/Sales Analysis/SalesTransactionStats";
 
 // import { CreatePasswordConfirmation,  } from "./Components/Auth/Confirmation";
 export const Router = () => {
@@ -46,7 +50,10 @@ export const Router = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/UserTransaction" element={<UserTransaction />} />
       <Route path="/SalesAnalysis" element={<SalesAnalysis />}/>
+      <Route path="/PointAnalysis" element={<PointAnalysis/>} />
+
       <Route path="/UserProfile" element={<UserProfile />} />
+
       <Route path="/StaffManagement" element={<StaffMgt />} />
       <Route path="/ProductManagement" element={<ProductMgt />} />
       <Route path="/FinanceManagement" element={<FinanceMgt />} />
