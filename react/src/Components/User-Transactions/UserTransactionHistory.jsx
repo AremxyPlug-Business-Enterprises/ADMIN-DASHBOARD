@@ -3,13 +3,14 @@ import PropTypes from "prop-types";
 
 import ArrowRight from "../../assets/arrow-right.png";
 import SearchIcon from "../../assets/SearchIcon.png";
-import Calendar from "../../assets/calendar.png";
+// import Calendar from "../../assets/calendar.png";
 import Export from "../../assets/export.png";
 import Filter from "../../assets/filter-icon.png";
 import FilterArrow from "../../assets/filter-arrow-down.png";
 
 import UserTransactionDetails from "../../Components/User-Transactions/UserTransactionDetails";
 import { Button } from "../../Components/User-Transactions/UserTransactionButtons";
+import { SelectDate } from "./DateFilter";
 
 
 
@@ -59,16 +60,7 @@ export function Search({ setOpenFilter }) {
         className="absolute top-[.9rem] md:top-[0.65rem] lg:top-1/3 left-2 lg:left-[0.5rem] md:left-[0.3rem] w-[0.893125rem] h-[0.893125rem] lg:w-[0.8925rem] lg:h-[0.8925rem] md:w-[0.5175rem] md:h-[0.5175rem]  "
       />
       <span className="flex flex-col w-full md:flex-row md:items-center gap-[1.0625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] ">
-        <p className=".poppins w-full flex items-center justify-center gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] rounded-[4px] lg:rounded-[4px] md:rounded-[2.32px] border lg:border md:border-[0.58px] border-[#D0D5DD] p-[0.625rem] px-10 md:p-[0.361875rem] lg:px-[0.625rem] lg:py-[0.55rem] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] text-[#344054] mr-2 ">
-          <span className="">2024-01-07</span>
-          <span className="">~</span>
-          <span className="">2024-01-08</span>
-          <img
-            src={Calendar}
-            alt="Calendar Icon"
-            className="w-[1.25rem] h-[1.265625rem] lg:w-[1.25rem] lg:h-[1.265rem] md:w-[0.72375rem] md:h-[0.733125rem] "
-          />
-        </p>
+        <SelectDate />
         <div className="w-full flex gap-6 md:gap-[0.27625rem] lg:gap-[0.47625rem]">
           <button className="w-full flex items-center gap-[0.476rem] lg:gap-[0.476rem] md:gap-[0.27625rem] border-[0.95px] lg:border-[0.95px] md:border-[0.55px] border-[#D0D5DD] py-[0.595625rem] lg:py-[0.595rem] md:py-[0.345rem] px-[1.071875rem] lg:px-[1.07rem] md:px-[0.6206rem] rounded-[7.62px] lg:rounded-[7.62px] md:rounded-[0.27625rem] justify-center drop-shadow-[0px_0.95px_1.91px_rgba(16,24,40,0.05)] lg:drop-shadow-[0px_0.95px_1.91px_rgba(16,24,40,0.05)] md:drop-shadow-[0px_0.55px_1.1px_rgba(16,24,40,0.05)] cursor-pointer ">
             {/* w-[9.6rem] */}
@@ -147,20 +139,21 @@ function Filters({ setOpenFilter }) {
   const products = ["All Products", "Telecom", "Payments", "Card issung"];
   const paymentMethods = ["NGN", "USD", "GBP", "EUR", "AUD", "KES"];
   return (
-    <div className="backdrop-filter bg-[rgb(255,255,255)] absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] lg:left-0 md:left-1 w-full flex items-center justify-center ">
+    <div className="backdrop-filter w-[75%] bg-[rgb(255,255,255)] absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] right-0 flex items-center justify-center ">
       <div className=".poppins border-[0.5px] lg:border-[0.5px] md:border-[0.29px] border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-[21.75rem]  lg:w-full lg:h-[36.47rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
         <h5 className="text-base lg:text-[1.5rem] md:text-[0.86875rem] font-medium leading-[1.3rem] lg:leading-[1.95rem] md:leading-[1.1293rem] pb-3 lg:pb-4 ">
           Filters
         </h5>
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-[1.5rem] md:gap-[0.86875rem] ">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-[1.5rem] w-full md:gap-[0.86875rem] ">
           <li className="relative flex flex-col gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.36187rem] ">
             <p className="relative font-semibold text-[#7E7E7E] lg:text-base md:text-[0.579rem] ">
               Status
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={toggleStatusDropdown}
             >
+              {/* w-[19rem] lg:w-[19rem]  md:w-[11.00437rem] */}
               {showStatus}
               <img
                 src={FilterArrow}
@@ -171,7 +164,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showStatusDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white z-1 py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.8rem] w-full bg-white z-1 pt-2 pb-5 px-1">
                 {statuses.map((stat, index) => (
                   <li
                     key={index}
@@ -193,9 +186,10 @@ function Filters({ setOpenFilter }) {
               Product
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={toggleProductsDropdown}
             >
+              {/* w-[19rem] lg:w-[19rem] md:w-[11.00437rem] */}
               {showProducts}
               <img
                 src={FilterArrow}
@@ -206,7 +200,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showProductsDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white z-1 py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.8rem] w-full bg-white z-1 pt-2 pb-5 px-1">
                 {products.map((prod, index) => (
                   <li
                     key={index}
@@ -228,7 +222,7 @@ function Filters({ setOpenFilter }) {
               Payment method
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={togglePaymentDropdown}
             >
               {showPaymentMethod}
@@ -241,7 +235,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showPaymentMethodDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.8rem] w-full  bg-white pt-2 pb-5 px-1">
                 {paymentMethods.map((payment, index) => (
                   <li
                     key={index}
@@ -268,7 +262,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="user-id"
             />
           </li>
@@ -281,7 +275,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="text"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C]  h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="username"
             />
           </li>
@@ -294,7 +288,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="email"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="customer-email"
             />
           </li>
@@ -307,7 +301,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="text"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="Virtual Account"
             />
           </li>
@@ -320,7 +314,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="order-no"
             />
           </li>
@@ -333,7 +327,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="transaction-id"
             />
           </li>
@@ -346,7 +340,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem]  md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="ref-no"
             />
           </li>

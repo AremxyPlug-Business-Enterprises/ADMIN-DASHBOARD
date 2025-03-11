@@ -5,6 +5,7 @@ import "react-date-range/dist/theme/default.css";
 
 import SelectDateIcon from "../../assets/SelectDateIcon.png";
 import ChevronDown from "../../assets/chevron-down.png";
+import Calendar from "../../assets/calendar.png";
 
 export default function DateFilter() {
   const [selectFilter, setSelectFilter] = useState(false);
@@ -64,7 +65,7 @@ export default function DateFilter() {
         className="w-[1.2125rem] h-[1.2125rem] lg:w-[1.24625rem] lg:h-[1.24625rem] md:w-[0.721875rem] md:h-[0.721875rem]"
       />
       {selectFilter && (
-        <ul className=".poppins text-[0.75rem] text-[#494A53] w-[9.125rem]  shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute top-[2.5rem] lg:top-[3.5rem] md:top-[2rem] lg:right-[0.5rem] md:right-0  bg-white z-10">
+        <ul className=".poppins text-[0.75rem] text-[#494A53] w-[9.125rem]  shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute top-[2.5rem] lg:top-[3.5rem] md:top-[2rem] lg:right-[0.5rem] md:right-0  bg-white ">
           {/* h-[2.75rem] */}
           {options.map((option, index) => (
             <li
@@ -132,5 +133,85 @@ export default function DateFilter() {
         </div>
       )}
     </div>
+  );
+}
+
+// Select Date
+
+export function SelectDate() {
+  const [selectedOption, setSelectedOption] = useState("2024-01-07 ~ 2024-01-08");
+  const [showCustomDatePicker, setShowCustomDatePicker] = useState(false);
+  const [range, setRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: "selection",
+    },
+  ]);
+
+  const toggleDatePicker = () => setShowCustomDatePicker((prev) => !prev);
+
+  const handleApplyCustom = (e) => {
+    e.stopPropagation();
+    const start = range[0].startDate.toLocaleDateString("en-CA");
+    const end = range[0].endDate.toLocaleDateString("en-CA");
+    setSelectedOption(`${start} ~ ${end}`);
+    setShowCustomDatePicker(false);
+  };
+
+  return (
+    <div className=".poppins w-full">
+      <button className="w-full cursor-pointer flex items-center justify-center gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] rounded-[4px] lg:rounded-[4px] md:rounded-[2.32px] border lg:border md:border-[0.58px] border-[#D0D5DD] p-[0.625rem] px-10 md:p-[0.361875rem] lg:px-[0.625rem] lg:py-[0.55rem] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] text-[#344054] mr-2 " onClick={toggleDatePicker}>
+      {/* <span className="">2024-01-07</span>
+      <span className="">~</span>
+      <span className="">2024-01-08</span> */}
+      {selectedOption}
+      <img
+        src={Calendar}
+        alt="Calendar Icon"
+        className="w-[1.25rem] h-[1.265625rem] lg:w-[1.25rem] lg:h-[1.265rem] md:w-[0.72375rem] md:h-[0.733125rem] "
+      />
+      </button>
+      {showCustomDatePicker && (
+        <div
+          className="bg-white rounded p-4 absolute top-[14rem] -right-10 lg:top-[5rem] lg:right-[10rem] md:top-[14rem] md:right-0 z-10 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)]"
+          onClick={(e) => e.stopPropagation()}
+        >
+
+          <DateRange
+            onChange={(item) => setRange([item.selection])}
+            moveRangeOnFirstSelection={false}
+            ranges={range}
+            months={2}
+            direction="horizontal"
+            showMonthAndYearPickers={true}
+            editableDateInputs={true}
+            className="shadow-[0px_23.65px_60.44px_0px_rgba(0,0,0,0.18)] "
+            retainEndDateOnFirstSelection={false}
+          />
+
+          <div className="flex justify-center items-center gap-5 mt-4">
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowCustomDatePicker(false);
+              }}
+              className="px-6 py-2 bg-white cursor-pointer rounded text-sm hover:bg-gray-100 border border-[#D0D5DD]"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={handleApplyCustom}
+              className="bg-[#04177F] text-white cursor-pointer px-8 py-2 text-sm rounded hover:bg-blue-900"
+            >
+              Apply
+            </button>
+          </div>
+        </div>
+      )}
+
+
+    </div>
+
   );
 }
