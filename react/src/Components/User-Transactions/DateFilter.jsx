@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DateRange } from "react-date-range";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
@@ -7,6 +7,38 @@ import SelectDateIcon from "../../assets/SelectDateIcon.png";
 import ChevronDown from "../../assets/chevron-down.png";
 import Calendar from "../../assets/calendar.png";
 
+
+function CustomDate({range, setRange}) {
+  const [isMobile, setIsMobile] = useState(false);
+  // Detect screen size
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkScreenSize();
+
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
+  return (
+    <DateRange
+            onChange={(item) => setRange([item.selection])}
+            moveRangeOnFirstSelection={false}
+            ranges={range}
+            // months={2}
+            months={isMobile ? 1 : 2}
+            // direction="horizontal"
+            direction={isMobile ? "vertical" : "horizontal"} 
+            showMonthAndYearPickers={true}
+            editableDateInputs={true}
+            className="shadow-[0px_23.65px_60.44px_0px_rgba(0,0,0,0.18)] "
+            retainEndDateOnFirstSelection={false}
+          />
+  )
+}
 export default function DateFilter() {
   const [selectFilter, setSelectFilter] = useState(false);
   const [selectedOption, setSelectedOption] = useState("TODAY");
@@ -93,26 +125,15 @@ export default function DateFilter() {
       {/* custom date picker */}
       {showCustomDatePicker && (
         <div
-          className="bg-white rounded p-4 absolute top-[14rem] -right-10 lg:top-[5rem] lg:right-[10rem] md:top-[14rem] md:right-0 z-10 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)] "
+          className="bg-white rounded p-4 absolute top-[14rem] -right-10 lg:top-[5rem] lg:right-[10rem] md:top-[14rem] md:right-0 z-1  shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)] "
           onClick={(e) => e.stopPropagation()}
         >
-          <p className="border border-[#E0E0E0] flex justify-center text-sm gap-[18rem] py-3 rounded-[4px] ">
+          <p className="border border-[#E0E0E0] flex justify-center text-sm gap-[6rem] md:gap-[18rem] py-3 rounded-[4px] ">
             <span>Start Date</span>
             <span>End Date</span>
           </p>
-          {/* react-date-range calendar */}
-          <DateRange
-            onChange={(item) => setRange([item.selection])}
-            moveRangeOnFirstSelection={false}
-            ranges={range}
-            months={2}
-            direction="horizontal"
-            // rangeColors={["#04177F"]}
-            showMonthAndYearPickers={true}
-            editableDateInputs={true}
-            className="shadow-[0px_23.65px_60.44px_0px_rgba(0,0,0,0.18)]"
-            retainEndDateOnFirstSelection={false}
-          />
+          {/* xustom calendar */}
+          <CustomDate range={range} setRange={setRange}/>
           <div className="flex justify-center items-center gap-[1.25rem] mt-4  ">
             <button
               onClick={(e) => {
@@ -148,6 +169,7 @@ export function SelectDate() {
       key: "selection",
     },
   ]);
+ 
 
   const toggleDatePicker = () => setShowCustomDatePicker((prev) => !prev);
 
@@ -160,7 +182,7 @@ export function SelectDate() {
   };
 
   return (
-    <div className=".poppins w-full">
+    <div className=".poppins w-full ">
       <button className="w-full cursor-pointer flex items-center justify-center gap-[0.625rem] lg:gap-[0.625rem] md:gap-[0.361875rem] rounded-[4px] lg:rounded-[4px] md:rounded-[2.32px] border lg:border md:border-[0.58px] border-[#D0D5DD] p-[0.625rem] px-10 md:p-[0.361875rem] lg:px-[0.625rem] lg:py-[0.55rem] md:font-medium text-base lg:text-[1.19rem] md:text-[0.69rem] text-[#344054] mr-2 " onClick={toggleDatePicker}>
       {/* <span className="">2024-01-07</span>
       <span className="">~</span>
@@ -174,20 +196,14 @@ export function SelectDate() {
       </button>
       {showCustomDatePicker && (
         <div
-          className="bg-white rounded p-4 absolute top-[14rem] -right-10 lg:top-[5rem] lg:right-[10rem] md:top-[14rem] md:right-0 z-10 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)]"
+          className="bg-white rounded p-1 pb-4 md:w-[77%] lg:w-[62%] absolute top-[8rem] left-0 lg:top-[5rem] lg:right-[10rem] md:top-[3rem] md:right-0 z-1 shadow-[0px_0px_20px_0px_rgba(139,67,255,0.5)]"
           onClick={(e) => e.stopPropagation()}
         >
 
-          <DateRange
-            onChange={(item) => setRange([item.selection])}
-            moveRangeOnFirstSelection={false}
-            ranges={range}
-            months={2}
-            direction="horizontal"
-            showMonthAndYearPickers={true}
-            editableDateInputs={true}
-            className="shadow-[0px_23.65px_60.44px_0px_rgba(0,0,0,0.18)] "
-            retainEndDateOnFirstSelection={false}
+          <CustomDate
+            range={range}
+            setRange={setRange}
+            setShowCustomDatePicker={setShowCustomDatePicker}
           />
 
           <div className="flex justify-center items-center gap-5 mt-4">

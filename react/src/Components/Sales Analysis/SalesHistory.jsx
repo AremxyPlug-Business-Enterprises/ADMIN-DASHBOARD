@@ -83,8 +83,8 @@ function Filters({ setOpenFilter }) {
   const productTypes = ["Telecom", "Payments", "Card issung"];
   const paymentMethods = ["NGN", "USD", "GBP", "EUR", "AUD", "KES"];
   return (
-    <div className="backdrop-filter w-[75%] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] right-0 flex items-center justify-center ">
-      <div className=".poppins border-[0.5px] lg:border-[0.5px] bg-[rgb(255,255,255)] md:border-[0.29px] right-0 border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full lg:h-[23.224375rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
+    <div className="backdrop-filter w-[50%] md:w-[75%] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] right-0 flex items-center justify-center ">
+      <div className=".poppins border-[0.5px] lg:border-[0.5px] bg-[rgb(255,255,255)] md:border-[0.29px] right-0 border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full lg:h-[23.224375rem] md:h-[16rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
         <h5 className="text-base lg:text-[1.5rem] md:text-[0.86875rem] font-medium leading-[1.3rem] lg:leading-[1.95rem] md:leading-[1.1293rem] pb-3 lg:pb-4 ">
           Filters
         </h5>
