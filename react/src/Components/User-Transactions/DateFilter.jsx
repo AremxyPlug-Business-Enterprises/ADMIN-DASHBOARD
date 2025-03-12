@@ -65,7 +65,7 @@ export default function DateFilter() {
         className="w-[1.2125rem] h-[1.2125rem] lg:w-[1.24625rem] lg:h-[1.24625rem] md:w-[0.721875rem] md:h-[0.721875rem]"
       />
       {selectFilter && (
-        <ul className=".poppins text-[0.75rem] text-[#494A53] w-[9.125rem]  shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute top-[2.5rem] lg:top-[3.5rem] md:top-[2rem] lg:right-[0.5rem] md:right-0  bg-white ">
+        <ul className=".poppins text-[0.75rem] z-1 text-[#494A53] w-[9.125rem]  shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute top-[2.5rem] lg:top-[3.5rem] md:top-[2rem] lg:right-[0.5rem] md:right-0  bg-white ">
           {/* h-[2.75rem] */}
           {options.map((option, index) => (
             <li

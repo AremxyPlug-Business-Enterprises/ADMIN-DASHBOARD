@@ -83,8 +83,8 @@ function Filters({ setOpenFilter }) {
   const productTypes = ["Telecom", "Payments", "Card issung"];
   const paymentMethods = ["NGN", "USD", "GBP", "EUR", "AUD", "KES"];
   return (
-    <div className="backdrop-filter bg-[rgb(255,255,255)] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] lg:left-0 md:left-1 w-full flex items-center justify-center ">
-      <div className=".poppins border-[0.5px] lg:border-[0.5px] md:border-[0.29px] border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-[21.75rem]  lg:w-full lg:h-[23.224375rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
+    <div className="backdrop-filter w-[75%] bg-opacity-50 absolute top-[14rem] lg:top-[8rem] md:top-[4.5rem] right-0 flex items-center justify-center ">
+      <div className=".poppins border-[0.5px] lg:border-[0.5px] bg-[rgb(255,255,255)] md:border-[0.29px] right-0 border-[#7E7E7E] rounded-[0.75rem] lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full lg:h-[23.224375rem] md:w-[36.3425rem] md:h-[24.05375rem] py-[1.4375rem] lg:py-[1.4375rem] md:py-[0.8325rem] px-[1.375rem] lg:px-[1.375rem] md:px-[0.79625rem] lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_6.95px_0px_rgba(0,0,0,0.25)] shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] ">
         <h5 className="text-base lg:text-[1.5rem] md:text-[0.86875rem] font-medium leading-[1.3rem] lg:leading-[1.95rem] md:leading-[1.1293rem] pb-3 lg:pb-4 ">
           Filters
         </h5>
@@ -94,7 +94,7 @@ function Filters({ setOpenFilter }) {
               Products
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={toggleStatusDropdown}
             >
               {showStatus}
@@ -107,7 +107,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showStatusDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full bg-white pt-2 pb-6 px-1">
                 {/* {statuses.map((stat, index) => (
                   <li
                     key={index}
@@ -129,7 +129,7 @@ function Filters({ setOpenFilter }) {
               Product Type
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={toggleProductsDropdown}
             >
               {showProducts}
@@ -142,7 +142,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showProductsDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white z-1 py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 top-[5.5rem] md:top-[4rem] lg:top-[5.5rem] w-full bg-white z-1 pt-2 pb-6 px-1">
                 {productTypes.map((prod, index) => (
                   <li
                     key={index}
@@ -164,7 +164,7 @@ function Filters({ setOpenFilter }) {
               Payment method
             </p>
             <span
-              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
+              className="relative font-medium leading-[1.3rem] text-[#7C7C7C] lg:border-[0.4px] border-[0.4px] border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] transition-all duration-300 p-4 flex items-center md:text-[0.8rem] lg:text-base "
               onClick={togglePaymentDropdown}
             >
               {showPaymentMethod}
@@ -177,7 +177,7 @@ function Filters({ setOpenFilter }) {
               />
             </span>
             {showPaymentMethodDropdown && (
-              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 md:top-[4rem] lg:top-[5.5rem] top-[5.5rem] w-full lg:w-[19rem] md:w-[11.00437rem] bg-white py-2 px-1">
+              <ul className="shadow-[0px_4px_10px_0px_rgba(0,0,0,0.25)] absolute left-0 md:top-[4rem] lg:top-[5.5rem] top-[5.5rem] w-full bg-white pt-2 pb-6 px-1">
                 {paymentMethods.map((payment, index) => (
                   <li
                     key={index}
@@ -204,7 +204,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="number"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="user-id"
             />
           </li>
@@ -217,7 +217,7 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="text"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="username"
             />
           </li>
@@ -230,14 +230,14 @@ function Filters({ setOpenFilter }) {
             </label>
             <input
               type="email"
-              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] w-[19rem] h-[3.1875rem] lg:w-[19rem] lg:h-[3.1875rem] md:w-[11.00437rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
+              className=".poppins outline-none lg:border-[0.4px] border-[0.4px]  border-[#9C9C9C] h-[3.1875rem] lg:h-[3.1875rem] md:h-[1.846rem] md:border-[0.23px] p-4 md:text-[0.8rem] lg:text-base font-medium leading-[1.3rem] text-[#7C7C7C] "
               id="customer-email"
             />
           </li>
          
         </ul>
 
-        <div className="flex items-center justify-center mt-8 pb-6  ">
+        <div className="flex items-center justify-center mt-8 lg:pb-6  md:pb-0 ">
           <Button onClick={() => setOpenFilter(false)}>Apply Filter</Button>
         </div>
         

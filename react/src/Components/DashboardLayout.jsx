@@ -26,7 +26,7 @@ export const DashboardLayout = ({children}) => {
   return (
     <div className="w-full relative">
         {/* THE NAVBAR */}
-    <div className={`fixed z-1   px-[5px] lg:pr-[60px] flex top-0 w-full items-center justify-between
+    <div className={`fixed z-1 px-[5px] lg:pr-[60px] flex top-0 w-full items-center justify-between
      bg-white lg:h-[120px] h-[74px] border-1 gap-[10%] border-b-gray-400  ${dashboardOpen ? "md:pl-[25%]" : "md:pl-[10%]"}`}>
         <div onClick={()=> setDashboardOpen(true)} className="flex w-[15%]  md:hidden">
       <img src= {menu} className="w-[30px] h-[30px]" alt="" />
