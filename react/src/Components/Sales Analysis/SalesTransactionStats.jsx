@@ -64,7 +64,7 @@ export default function AllSalesStats() {
                   className="lg:h-5 lg:w-5 md:h-[0.72375rem] md:w-[0.72375rem] block rounded-[50%]"
                 ></span>
                 {/* Category Title */}
-                <ul className=".poppins font-semibold md:text-[9.27px] lg:text-base">
+                <ul className=".poppins font-semibold md:text-[0.77rem] lg:text-base">
                   <li className="text-[#7E7E7E] ">{item.name}</li>
 
                   <li className="">
@@ -82,10 +82,10 @@ export default function AllSalesStats() {
         </div>
 
         {/* Total Sales Card */}
-        <div className="mt-10 lg:w-[20rem] md:w-[9.771875rem] md:rounded-[5.79px] lg:rounded-[13.29px] flex items-center lg:gap-4 md:gap-3 md:p-2 lg:p-4 lg:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_2.32px_0px_rgba(0,0,0,0.25)] ">
+        <div className="mt-10 lg:w-[20rem] md:w-[10rem] md:rounded-[5.79px] lg:rounded-[13.29px] flex items-center lg:gap-4 md:gap-3 md:p-2 lg:p-4 lg:shadow-[0px_0px_5.32px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_2.32px_0px_rgba(0,0,0,0.25)] ">
           <div className="lg:w-[3.5rem] lg:h-[3.5rem] md:w-[2rem] md:h-[2rem] lg:rounded-[12.5px] md:rounded-[5.79px] bg-[#04177F] "></div>
-          <div className=".poppins flex flex-col lg:gap-y-1 font-semibold md:text-[9.27px] lg:text-base ">
-            <h3 className="lg:text-[1.2rem] md:text-[0.72375rem] text-[#7E7E7E]">
+          <div className=".poppins flex flex-col lg:gap-y-1 font-semibold md:text-[0.77rem] lg:text-base ">
+            <h3 className="lg:text-[1.2rem] md:text-[0.9625rem] text-[#7E7E7E]">
               Total Sales
             </h3>
             <p className="">Volume: {totalSales.volume.toLocaleString()}</p>
@@ -94,7 +94,7 @@ export default function AllSalesStats() {
         </div>
       </div>
 
-      <div className="flex justify-between gap-[10rem]  md:hidden w-full">
+      <div className="flex justify-between gap-[10rem] md:hidden w-full">
         {data.slice(0, 2).map((item, index) => (
           <div key={index} className="w-full mt-6 ">
             {/* Circular Progress Chart */}
@@ -227,7 +227,7 @@ export function CustomizeSalesStats({ selectValue, setSalesTab }) {
           style={{ backgroundColor: data[selectValue].color }}
           className="lg:w-[3.5rem] lg:h-[3.5rem] md:w-[2rem] md:h-[2rem] w-[2rem] h-[2rem] rounded-[5.79px] lg:rounded-[12.5px] md:rounded-[5.79px] "
         ></div>
-        <div className=".poppins flex flex-col lg:gap-y-1 md:font-semibold text-[14px] md:text-[9.27px] lg:text-base">
+        <div className=".poppins flex flex-col lg:gap-y-1 md:font-semibold text-[14px] md:text-[0.65rem] lg:text-base">
           <h3 className="lg:text-[1.2rem] text-[14.5px] md:text-[0.72375rem] text-[#7E7E7E]">
             {selectValue === "Card Issuing" ? "Card" : selectValue} Sales
           </h3>
@@ -294,7 +294,7 @@ function Chart({ tempValue, totalSales, Alldata, selectValue }) {
               className="w-[0.75rem] h-[0.75rem] lg:h-4 lg:w-4 md:h-[0.7rem] md:w-[0.7rem] block rounded-[50%]"
             ></span>
             {/* Category Title */}
-            <ul className=".poppins md:font-semibold text-[11.5px] md:text-[0.5rem] lg:text-[0.671875rem]  ">
+            <ul className=".poppins md:font-semibold text-[11.5px] md:text-[0.65rem] lg:text-[0.671875rem]  ">
               <li className="text-[#7E7E7E] ">{item.name}</li>
 
               <li className="">
