@@ -103,40 +103,4 @@ export default function SalesTransactionDetails() {
   );
 }
 
-// #26D06F #F95252 #FAB329 #92ABFE
 
-// <div className="hidden md:block lg:mt-4 md:mt-2 w-full rounded-[12px] ">
-//   <ul className="bg-[#C8D5FE] w-full flex justify-between px-[0.8rem] lg:px-[0.8rem] lg:py-[1.8rem] py-[1.8rem] md:px-[0.5rem] md:py-[1.5rem] rounded-t-[0.5rem] lg:rounded-t-[0.5rem] md:rounded-t-[0.434375rem] text-left font-semibold lg:text-base lg:leading-[1.3rem] md:text-[0.8rem] md:leading-[0.753125rem]">
-//     <li className="">Customer Name</li>
-//     <li>Products</li>
-//     <li>Description</li>
-//     <li>Order No</li>
-//     <li>Amount</li>
-//     <li>Date & Time</li>
-//     <li>Status</li>
-//   </ul>
-
-//   <div className="flex flex-col w-full justify-center items-center py-[2rem] ">
-//     <img
-//       src={NoTransaction}
-//       alt="No Transaction Image"
-//       className="w-[30rem] h-[26rem] "
-//     />
-//     <p className="font-medium text-[1.5rem] leading-[3rem] text-[#0000004D] ">
-//       No Transaction Found !
-//     </p>
-//   </div>
-//   {/* text-[2.5rem] leading-[3.25rem] */}
-// </div>
-
-// <div className="md:hidden flex flex-col w-full justify-center items-center py-[2rem] ">
-//   <img
-//     src={NoTransaction}
-//     alt="No Transaction Image"
-//     className="w-[18.96125rem] h-[16.72375rem] md:w-[30rem] md:h-[26rem] opacity-80 "
-//   />
-//   <p className=".poppins font-medium text-[1.17375rem] md:text-[1.5rem] leading-[3rem] text-[#0000004D] ">
-//     No Transaction Found !
-//   </p>
-// </div>
-// <; className="bg-white lg:rounded-[0.75rem] md:rounded-[0.434375rem] w-full mb-10 lg:mb-12 md:mb-10 lg:mt-14 md:mt-12 lg:shadow-[0px_0px_12px_0px_rgba(0,0,0,0.25)] md:shadow-[0px_0px_3.53px_0px_rgba(0,0,0,0.25)]  ">

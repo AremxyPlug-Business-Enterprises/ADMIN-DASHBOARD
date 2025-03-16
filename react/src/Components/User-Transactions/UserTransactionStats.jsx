@@ -65,7 +65,7 @@ export default function TransactionStats() {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex flex-col w-full lg:gap-[0.5rem] md:gap-[0.29rem] "
+            className="flex flex-col w-full lg:gap-[0.5rem] md:gap-[0.29rem]  "
           >
             {/* gap-[0.99rem] md:gap-[0.5788rem] gap-[0.29rem] */}
             <CircularProgressDiv
